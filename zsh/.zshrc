@@ -3,12 +3,12 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 LD_LIBRARY_PATH=/usr/lib
 SAVEHIST=1000
-W3MIMGDISPLAY="/usr/lib/w3m/w3mimgdisplay"
+#W3MIMGDISPLAY="/usr/lib/w3m/w3mimgdisplay"
 
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/dekr0/.zshrc'
+#zstyle :compinstall filename '/home/dekr0/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -37,20 +37,21 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-export EDITOR=/usr/bin/nvim
-export JAVA_HOME="/home/dekr0/.jdks/openjdk-19.0.2"
-export PATH=$JAVA_HOME/bin:$PATH
-
 # Alias
-source "/home/dekr0/.config/alias"
+#source "/home/dekr0/.config/alias"
 
 # Posh
 theme="my-blue-owl"
-eval "$(oh-my-posh init zsh --config /home/dekr0/.config/poshthemes/${theme}.omp.json)"
+#eval "$(oh-my-posh init zsh --config /home/dekr0/.config/poshthemes/${theme}.omp.json)"
 
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gb="git checkout"
 
 # pnpm
-export PNPM_HOME="/home/dekr0/.local/share/pnpm"
-export USER_BIN="/home/dekr0/.local/bin/"
-export PATH="$USER_BIN:$PNPM_HOME:$PATH"
+#export PNPM_HOME="/home/dekr0/.local/share/pnpm"
+#export USER_BIN="/home/dekr0/.local/bin/"
+#export PATH="$USER_BIN:$PNPM_HOME:$PATH"
 # pnpm end
