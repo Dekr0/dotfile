@@ -21,9 +21,8 @@ require("lspconfig").lua_ls.setup{
         },
     },
 }
-
-require("lspconfig").jedi_language_server.setup{}
 require("lspconfig").marksman.setup{}
+require("lspconfig").pyright.setup{}
 require("lspconfig").tsserver.setup{}
 
 local lsp = require("lsp-zero")
@@ -32,8 +31,8 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'clangd',
-  'jedi_language_server',
   'marksman',
+  'pyright',
   'tsserver',
   'rust_analyzer',
 })
@@ -53,9 +52,9 @@ lsp.configure('sumneko_lua', {
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<C-j>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-k>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-s>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -123,12 +122,12 @@ vim.api.nvim_set_keymap(
 -- Go to next diagnostic (if there are multiple on the same line, only shows
 -- one at a time in the floating window)
 vim.api.nvim_set_keymap(
-  'n', '<Leader>ne', ':lua vim.diagnostic.goto_next()<CR>',
+  'n', '<Leader>ke', ':lua vim.diagnostic.goto_next()<CR>',
   { noremap = true, silent = true }
 )
 -- Go to prev diagnostic (if there are multiple on the same line, only shows
 -- one at a time in the floating window)
 vim.api.nvim_set_keymap(
-  'n', '<Leader>pe', ':lua vim.diagnostic.goto_prev()<CR>',
+  'n', '<Leader>je', ':lua vim.diagnostic.goto_prev()<CR>',
   { noremap = true, silent = true }
 )

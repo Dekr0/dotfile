@@ -2,6 +2,12 @@ local nnoremap = require("dekr0.generate_keymapper").nnoremap
 
 nnoremap("<leader><esc>", "<cmd>Ex<CR>")
 
+vim.keymap.set("n", "j", "<Up>")
+vim.keymap.set("n", "k", "<Down>")
+
+vim.keymap.set("v", "j", "<Up>")
+vim.keymap.set("v", "k", "<Down>")
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

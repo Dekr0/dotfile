@@ -17,6 +17,8 @@ local packer_startup =  require('packer').startup(function(use)
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
     use 'navarasu/onedark.nvim'
+    use 'martinsione/darkplus.nvim'
+    use 'folke/tokyonight.nvim'
 
     use {
         'VonHeikemen/lsp-zero.nvim',
