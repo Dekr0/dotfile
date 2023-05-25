@@ -120,5 +120,9 @@ bindkey -M viins '^R' fzf-history-widget
 }
 
 fvim() {
-    nvim $(find . | fzf)
+    local dest=${1:-.}
+    local selected=`find $dest | fzf`
+    if find $dest | grep -q $selected 2>/dev/null; then
+        nvim $selected
+    fi
 }
