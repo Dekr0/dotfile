@@ -2,6 +2,8 @@ local complete = function()
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
     local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    local lspkind = require("lspkind");
 
     cmp.setup({
         window = {
@@ -9,9 +11,18 @@ local complete = function()
                 scrollbar = false,
             }
         },
---        formatting = {
---            format = require("complete.lspbs").nvim_cmp_opt
---        },
+        formatting = {
+            format = lspkind.cmp_format({
+                mode = "symbol_text",
+                menu = ({
+                    buffer = "[Buffer]",
+                    nvim_lsp = "[LSP]",
+                    luasnip = "[LuaSnip]",
+                    nvim_lua = "[Lua]",
+                    latex_symbols = "[Latex]",
+                })
+            }),
+        },
         mapping = {
             ["<C-k>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
             ["<C-j>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
@@ -27,20 +38,21 @@ local complete = function()
             { "i", "c" }
             ),
 
-            ["<c-space>"] = cmp.mapping {
-                i = cmp.mapping.complete(),
-                c = function(
-                    _ --[[fallback]]
-                    )
-                    if cmp.visible() then
-                        if not cmp.confirm { select = true } then
-                            return
-                        end
-                    else
-                        cmp.complete()
-                    end
-                end,
-            },
+            ["<C-e>"] = cmp.mapping(function(fallback)
+                if luasnip.expand_or_jumpable() then
+                    luasnip.expand_or_jump()
+                else
+                    fallback()
+                end
+            end, { "i", "s" }),
+
+            ["<C-r>"] = cmp.mapping(function(fallback)
+                if luasnip.jumpable(-1) then
+                    luasnip.jump(-1)
+                else
+                    fallback()
+                end
+            end, { "i", "s" }),
 
             ["<tab>"] = cmp.config.disable
         },
@@ -55,7 +67,7 @@ local complete = function()
 
         snippet = {
             expand = function(args)
-                require("luasnip").lsp_expand(args.body)
+                luasnip.lsp_expand(args.body)
             end,
         }
     })
