@@ -123,23 +123,39 @@ local plugins = {
     },
 
     --vim-airline
+    --{
+    --    "vim-airline/vim-airline",
+    --    lazy = false
+    --},
+    --{
+    --    "vim-airline/vim-airline-themes",
+    --    lazy = false
+    --},
+
+    --lualine
     {
-        "vim-airline/vim-airline",
-        lazy = false
-    },
-    {
-        "vim-airline/vim-airline-themes",
-        lazy = false
+        "nvim-lualine/lualine.nvim",
+        lazy = false,
+        config = require('plugins.ll')
     },
 
-    --vscode theme
+    --tokyonight
     {
-        "tomasiser/vim-code-dark",
+        "folke/tokyonight.nvim",
+        config = require('plugins.tokoyonight'),
         lazy = false,
-        config = function()
-            vim.cmd([[ colorscheme codedark ]])
-        end
+        priority = 1000,
+        opts = {}
     }
+
+    --vscode theme
+    --{
+    --    "tomasiser/vim-code-dark",
+    --    lazy = false,
+    --    config = function()
+    --        vim.cmd([[ colorscheme codedark ]])
+    --    end
+    --}
 }
 
 local options = {
