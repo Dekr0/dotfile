@@ -11,7 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 local plugins = {
     --autocomplete
     {
@@ -56,6 +55,14 @@ local plugins = {
         "ThePrimeagen/harpoon",
         config = require("plugins.harpoon"),
         lazy = false
+    },
+
+    --leap
+    {
+        "ggandor/leap.nvim",
+        config = require("plugins.jump"),
+        dependencies = "tpope/vim-repeat",
+        lazy = false,
     },
 
     --mason

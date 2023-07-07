@@ -19,7 +19,7 @@ local lspconfig = function()
     }
 
     lspconfig.omnisharp.setup {
-        cmd = { "dotnet", "/home/dekr0/.dotnet/omnisharp/OmniSharp.dll" },
+        cmd = { "dotnet", "/home/dekr0/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
 
         -- Enables support for reading code style, naming convention and analyzer
         -- settings from .editorconfig.

@@ -31,4 +31,9 @@ nnoremap("<leader>cd", function ()
     vim.cmd([[ pwd ]])
 end)
 
+-- Omn
+nnoremap("<F12>", function ()
+    vim.cmd([[ Slient grep -RIi "Invalid character in group name" ]])
+end)
+
 print("Keymapping ")
