@@ -47,7 +47,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#c0c0c0",
+          "foreground": "#f1c232",
           "foreground_templates": [
             "{{ if gt .Code 0 }}#d11141{ end }}"
           ],
@@ -55,7 +55,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "\uf29b ",
+          "template": " \udb83\udce8 ",
           "type": "exit"
         }
       ],

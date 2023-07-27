@@ -1,5 +1,5 @@
 require("vanilla.native")
-require("vanilla.nnoremap")
+require("vanilla.keymap")
 
 print("Plugins  ")
 

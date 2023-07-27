@@ -1,10 +1,12 @@
 local nnoremap = require("vanilla.keymapper").nnoremap
+local vnoremap = require("vanilla.keymapper").vnoremap
 
 vim.g.mapleader = " "
 
 nnoremap("<leader><esc>", "<cmd>Ex<CR>")
 nnoremap("<S-q>", "<cmd>q<CR>")
 nnoremap("<leader>s", "<cmd>w<CR>")
+vnoremap("<leader>c", '"+y')
 
 vim.keymap.set("n", "j", "<Up>")
 vim.keymap.set("n", "k", "<Down>")
