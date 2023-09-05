@@ -4,12 +4,12 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#00aedb",
+          "foreground": "#0f8493",
           "properties": {
             "style": "folder"
           },
           "style": "diamond",
-          "template": "<#00aedb>\uf0e7</>  <b>{{ .Path }}</b>  ",
+          "template": "<#0f8493>\uf0e7</>  <b>{{ .Path }}</b>  ",
           "type": "path"
         },
         {
@@ -24,7 +24,7 @@
           "type": "git"
         },
         {
-          "foreground": "#f37735",
+          "foreground": "#4d8206",
           "properties": {
             "style": "dallas",
             "threshold": 0
@@ -47,7 +47,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#f1c232",
+          "foreground": "#b89a17",
           "foreground_templates": [
             "{{ if gt .Code 0 }}#d11141{ end }}"
           ],
@@ -55,7 +55,7 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": " \udb83\udce8 ",
+          "template": " \ue234 ",
           "type": "exit"
         }
       ],

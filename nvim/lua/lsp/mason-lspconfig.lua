@@ -1,6 +1,6 @@
 local mason_lspconfig = function()
     require("mason-lspconfig").setup {
-        ensure_installed = { "clangd", "lua_ls", "omnisharp", "tsserver" }
+        ensure_installed = { "astro", "cssls", "clangd", "lua_ls", "omnisharp", "tailwindcss", "tsserver" }
     }
 
     print("Mason-lspconfig  ")

@@ -67,6 +67,19 @@ ts() {
         fi
 }
 
+tsc() {
+    ts
+    if [[ -a /usr/bin/yarn ]]
+    then
+        yarn add -D webpack webpack-cli
+    elif [[ -a /usr/bin/node ]]
+    then
+        npm install --save-dev webpack webpack-cli
+    else
+        echo "Require npm / yarn"
+    fi
+}
+
 n ()
 {
     # Block nesting of nnn in subshells
@@ -90,7 +103,7 @@ n ()
 
     # The command builtin allows one to alias nnn to n, if desired, without
     # making an infinitely recursive alias
-    command nnn "$@"
+    command nnn -eHPp "$@"
 
     [ ! -f "$NNN_TMPFILE" ] || {
         . "$NNN_TMPFILE"

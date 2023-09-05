@@ -50,6 +50,13 @@ local plugins = {
         lazy = false
     },
 
+    --discord-rich-presence
+    {
+        dir = "/home/dekr0/codebase/rc.nvim/",
+        config = require("plugins.discord"),
+        lazy = false
+    },
+
     --harpoon
     {
         "ThePrimeagen/harpoon",
@@ -130,16 +137,6 @@ local plugins = {
         lazy = false
     },
 
-    --vim-airline
-    --{
-    --    "vim-airline/vim-airline",
-    --    lazy = false
-    --},
-    --{
-    --    "vim-airline/vim-airline-themes",
-    --    lazy = false
-    --},
-
     --lualine
     {
         "nvim-lualine/lualine.nvim",
@@ -147,22 +144,32 @@ local plugins = {
         config = require('plugins.ll')
     },
 
-    --tokyonight
+    --rose pine
     {
-        "folke/tokyonight.nvim",
-        config = require('plugins.tokoyonight'),
+        'rose-pine/neovim',
+        config = require('plugins.rose'),
         lazy = false,
         priority = 1000,
         opts = {}
     }
 
-    --vscode theme
+    --tokyonight
     --{
-    --    "tomasiser/vim-code-dark",
+    --    "folke/tokyonight.nvim",
+    --    config = require('plugins.tokoyonight'),
     --    lazy = false,
-    --    config = function()
-    --        vim.cmd([[ colorscheme codedark ]])
-    --    end
+    --    priority = 1000,
+    --    opts = {}
+    --}
+    --
+
+    --kanagawa
+    --{
+    --    "rebelot/kanagawa.nvim",
+    --    config = require('plugins.kanagawa'),
+    --    lazy = false,
+    --    priority = 1000,
+    --    opts = {}
     --}
 }
 

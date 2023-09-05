@@ -1,8 +1,19 @@
 local lspconfig = function()
     local lspconfig = require('lspconfig')
 
-    lspconfig.clangd.setup{
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+    lspconfig.astro.setup {
+
+    }
+
+    lspconfig.clangd.setup {
+
+    }
+
+    lspconfig.cssls.setup {
+        capabilities = capabilities,
     }
 
     lspconfig.lua_ls.setup {
@@ -58,6 +69,10 @@ local lspconfig = function()
     }
 
     lspconfig.tsserver.setup {
+
+    }
+
+    lspconfig.tailwindcss.setup {
 
     }
 
