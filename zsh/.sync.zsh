@@ -1,54 +1,51 @@
 config="${HOME}/.config"
 codebase="${HOME}/codebase"
-stage="${HOME}/repo/mine"
-dotfile=(
-#    "${config}/alacritty/alacritty.yml"
-#    "${config}/nnn"
-#    "${config}/nvim" 
-#    "${config}/picom"
-#    "${config}/rofi"
-#    "${config}/theme.omp.json" 
+mine="${HOME}/repo/mine"
+dotfiles=(
+    "${config}/alacritty/alacritty.yml"
+    "${config}/nnn"
+    "${config}/nvim" 
+    "${config}/picom/picom.conf"
+    "${config}/rofi"
+    "${config}/theme.omp.json" 
     "${config}/zsh"
-#    "${HOME}/.zshenv"
-#    "${HOME}/.tmux.conf"
+    "${HOME}/.zshenv"
+    "${HOME}/.tmux.conf"
 )
 
 stage_zsh()
 {
-   if [[ -d ${HOME}/Trash/dotfile/zsh ]]; then
-       if [[ "$2" == "y" ]]; then
-       else
-           rsync -av --progress $1 ${HOME}/Trash/dotfile/ --exclude cache --exclude .zcompdump
-       fi
-   else
-       mkdir ${HOME}/Trash/dotfile/zsh
-   fi
+    if [[ ! -d ${mine}/dotfile/zsh ]]; then
+        mkdir ${mine}/dotfile/zsh
+    fi
+
+    rsync -av --progress $1 ${mine}/dotfile/ --exclude cache --exclude .zcompdump
 }
 
-stage_dotfile()
+stage_nvim()
 {
-    echo "Stage all(y/n)?"
-    read force
-    echo $force
-    for c in ${dotfile[@]}; do
+    if [[ ! -d ${mine}/dotfile/nvim ]]; then
+        mkdir ${mine}/dotfile/nvim
+    fi
+
+    rsync -av --progress $1 ${mine}/dotfile/ --exclude="*.json"
+}
+
+stage_dotfiles()
+{
+    for c in ${dotfiles[@]}; do
         if [[ -d $c ]]; then
-            echo "$c is a dir"
             if [[ "$c" == *zsh ]]; then
-                stage_zsh $c $force
+                stage_zsh $c
+            elif [[ "$c" == *nvim ]]; then
+                stage_nvim $c
             else
-                if [[ "$force" == "y" ]]; then
-                    \cp -rf $c ${HOME}/Trash/dotfile
-                else
-                    cp -r ${c} ${HOME}/Trash/dotfile
-                fi
+                \cp -rf $c ${mine}/dotfile
             fi
         elif [[ -f $c ]]; then
-            echo "$c is a file"
-            if [[ "$force" == "y" ]]; then
-                \cp -f $c ${HOME}/Trash/dotfile
-            else
-                cp ${c} ${HOME}/Trash/dotfile
-            fi
+            \cp -f $c ${mine}/dotfile
         fi
     done
+
+    cd $mine/dotfile
 }
