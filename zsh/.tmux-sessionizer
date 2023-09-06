@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/codebase ~/repo/mine/ ~/.config/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/whetstone ~/codebase/playground/kata-machine/ ~/codebase ~/repo/mine/ ~/repo/mine/dwm ~/repo/mine/dotfile ~/.config/ -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
