@@ -4,6 +4,7 @@ local harpoon = function()
 
     vim.keymap.set("n", "<leader>m", mark.add_file)
     vim.keymap.set("n", "<leader>M", mark.rm_file)
+    vim.keymap.set("n", "<leader>hc", mark.clear_all)
     vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu)
 
     vim.keymap.set("n", "<leader>v1h", function() ui.nav_file(1) end)

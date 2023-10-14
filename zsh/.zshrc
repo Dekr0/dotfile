@@ -30,3 +30,6 @@ zstyle ':completion:*' rehash true                              # automatically 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# bun completions
+[ -s "/home/dekr0/.bun/_bun" ] && source "/home/dekr0/.bun/_bun"

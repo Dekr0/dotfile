@@ -12,6 +12,10 @@ local lspconfig = function()
 
     }
 
+    lspconfig.gopls.setup {
+
+    }
+
     lspconfig.cssls.setup {
         capabilities = capabilities,
     }
