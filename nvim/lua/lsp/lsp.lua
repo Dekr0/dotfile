@@ -12,9 +12,14 @@ local lspconfig = function()
 
     }
 
-    lspconfig.gopls.setup {
-
-    }
+    lspconfig.eslint.setup({
+        on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = bufnr,
+                command = "EslintFixAll",
+            })
+        end,
+    })
 
     lspconfig.cssls.setup {
         capabilities = capabilities,
@@ -73,7 +78,6 @@ local lspconfig = function()
     }
 
     lspconfig.tsserver.setup {
-
     }
 
     lspconfig.tailwindcss.setup {

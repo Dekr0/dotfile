@@ -46,6 +46,7 @@ mssd() {
 alias me="sudo ntfs-3g /dev/sda1 /mnt/windows/E"
 alias mf="sudo ntfs-3g /dev/sda2 /mnt/windows/F"
 alias mg="sudo ntfs-3g /dev/sda3 /mnt/windows/G"
+alias md="sudo ntfs-3g /dev/nvme0n1p6 /mnt/windows/D"
 alias mb="sudo mount /dev/sdc1 /mnt/backup"
 alias ue="sudo umount /mnt/windows/E"
 alias uf="sudo umount /mnt/windows/F"
@@ -54,31 +55,31 @@ alias ub="sudo umount /mnt/backup"
 alias monitor-normal="xrandr --output HDMI-0 --rotate normal"
 alias monitor-right="xrandr --output HDMI-0 --rotate right"
 
-ts() {
-        if [[ -a /usr/bin/yarn ]]
-        then
-            yarn add -D ts-node typescript @types/node
-            yarn tsc --init
-        elif [[ -a /usr/bin/node ]]
-        then
-            npm install --save-dev ts-node typescript @types/node
-        else
-            echo "Require npm / yarn"
-        fi
-}
-
-tsc() {
-    ts
-    if [[ -a /usr/bin/yarn ]]
-    then
-        yarn add -D webpack webpack-cli
-    elif [[ -a /usr/bin/node ]]
-    then
-        npm install --save-dev webpack webpack-cli
-    else
-        echo "Require npm / yarn"
-    fi
-}
+# ts() {
+#         if [[ -a /usr/bin/yarn ]]
+#         then
+#             yarn add -D ts-node typescript @types/node
+#             yarn tsc --init
+#         elif [[ -a /usr/bin/node ]]
+#         then
+#             npm install --save-dev ts-node typescript @types/node
+#         else
+#             echo "Require npm / yarn"
+#         fi
+# }
+# 
+# tsc() {
+#     ts
+#     if [[ -a /usr/bin/yarn ]]
+#     then
+#         yarn add -D webpack webpack-cli
+#     elif [[ -a /usr/bin/node ]]
+#     then
+#         npm install --save-dev webpack webpack-cli
+#     else
+#         echo "Require npm / yarn"
+#     fi
+# }
 
 n ()
 {

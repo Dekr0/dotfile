@@ -114,27 +114,9 @@ local plugins = {
         lazy = false
     },
 
-    --neotree
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        config = require("plugins.neotree"),
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim"
-        },
-        lazy = false
-    },
-
-    --telescope
-    {
-        "nvim-telescope/telescope.nvim",
-        config = require("plugins.telescope"),
-        dependencies = {
-            'nvim-lua/plenary.nvim'
-        },
-        tag = "0.1.1",
-        lazy = false
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+      dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     --lualine
@@ -142,6 +124,17 @@ local plugins = {
         "nvim-lualine/lualine.nvim",
         lazy = false,
         config = require('plugins.ll')
+    },
+
+    --which
+    {
+        "folke/which-key.nvim",
+        config = require("plugins.which"),
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
     },
 
     --rose pine
