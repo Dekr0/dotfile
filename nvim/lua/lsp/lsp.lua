@@ -77,6 +77,10 @@ local lspconfig = function()
         analyze_open_documents_only = false,
     }
 
+    lspconfig.pyright.setup {
+
+    }
+
     lspconfig.tsserver.setup {
     }
 

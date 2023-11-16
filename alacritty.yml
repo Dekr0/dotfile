@@ -54,13 +54,16 @@ shell:
 
 font:
   normal:
-    family: CaskaydiaCove Nerd Font
+    # family: CaskaydiaCove Nerd Font
+    family: IosevkaTermNerdFont
     style: Regular
   bold:
-    family: CaskaydiaCove Nerd Font
+    # family: CaskaydiaCove Nerd Font
+    family: IosevkaTermNerdFont
     style: Bold
   italic:
-    family: CaskaydiaCove Nerd Font
+    # family: CaskaydiaCove Nerd Font
+    family: IosevkaTermNerdFont
     style: Italic
   size: 14
 

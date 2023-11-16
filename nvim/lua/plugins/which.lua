@@ -28,6 +28,7 @@ local which = function()
                 q = { "<cmd>q<cr>", "close the current file" },
                 s = { "<cmd>w<cr>", "save the file" },
                 f = { "<cmd>%!npx prettier --stdin-filepath %<cr><cmd>w<cr>", "save the file with prettier" },
+                fp = { "<cmd>!python -m black %<cr>", "save the file with black (Python)" },
                 t = { telescope_builtin.find_files, "telescope (cd scope)" },
                 tc = { telescope_builtin.commands, "telescope (command)" },
                 tg = { telescope_builtin.git_files, "telescope (git scope)" },
