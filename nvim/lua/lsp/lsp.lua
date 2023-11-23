@@ -78,7 +78,6 @@ local lspconfig = function()
     }
 
     lspconfig.pyright.setup {
-
     }
 
     lspconfig.tsserver.setup {
