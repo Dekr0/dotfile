@@ -57,10 +57,19 @@ local plugins = {
         lazy = false
     },
 
+    --folding
+    {
+        "kevinhwang91/nvim-ufo",
+        dependencies = "kevinhwang91/promise-async",
+        config = require("plugins.ufo"),
+        lazy = false
+    },
+
     --harpoon
     {
         "ThePrimeagen/harpoon",
-        config = require("plugins.harpoon"),
+        branch = "harpoon2",
+        dependencies = "nvim-lua/plenary.nvim",
         lazy = false
     },
 
@@ -124,6 +133,12 @@ local plugins = {
         "nvim-lualine/lualine.nvim",
         lazy = false,
         config = require('plugins.ll')
+    },
+
+    {
+        "dekr0/sutairu.nvim",
+        dir = "/home/dekr0/codebase/stackmap.nvim",
+        lazy = false,
     },
 
     --which

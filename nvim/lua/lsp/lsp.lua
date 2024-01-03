@@ -25,6 +25,9 @@ local lspconfig = function()
         capabilities = capabilities,
     }
 
+    lspconfig.gopls.setup {
+    }
+
     lspconfig.lua_ls.setup {
         settings = {
             Lua = {
@@ -80,11 +83,39 @@ local lspconfig = function()
     lspconfig.pyright.setup {
     }
 
+    lspconfig.rust_analyzer.setup {
+        on_attach=function(client)
+            require'completion'.on_attach(client)
+        end,
+        settings = {
+            ["rust-analyzer"] = {
+                imports = {
+                    granularity = {
+                        group = "module",
+                    },
+                    prefix = "self",
+                },
+                cargo = {
+                    buildScripts = {
+                        enable = true,
+                    },
+                },
+                procMacro = {
+                    enable = true
+                },
+            }
+        }
+    }
+
     lspconfig.tsserver.setup {
     }
 
     lspconfig.tailwindcss.setup {
 
+    }
+
+    lspconfig.volar.setup {
+        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
     }
 
     print("LSP Server  ")

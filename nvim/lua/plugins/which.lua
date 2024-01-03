@@ -1,7 +1,7 @@
 local which = function()
     local wk = require("which-key")
-    -- local harpoon = require("harpoon.mark")
-    -- local harpoon_ui = require("harpoon.ui")
+    local harpoon = require("harpoon")
+    harpoon:setup()
     local telescope_builtin = require("telescope.builtin")
 
     wk.register(
@@ -16,24 +16,12 @@ local which = function()
                     "cd to the current directory shown in nvim file explorer"
                 },
                 e = { "<cmd>Ex<cr>", "go to nvim file explorer" },
-                -- h = {
-                --     name = "harpoon",
-                --     c = { harpoon.clear_all, "harpoon clear all" },
-                --     m = { harpoon.add_file, "harpoon mark" },
-                --     M = { harpoon.rm_file, "harpoon unmark" },
-                --     s = { harpoon_ui.toggle_quick_menu, "harpoon menu" },
-                -- },
                 n = { "<cmd>Neotree<cr>", "neotree" },
                 nc = { "<cmd>NeoTreeClose<cr>", "close neotree" },
                 q = { "<cmd>q<cr>", "close the current file" },
                 s = { "<cmd>w<cr>", "save the file" },
                 f = { "<cmd>%!npx prettier --stdin-filepath %<cr><cmd>w<cr>", "save the file with prettier" },
                 fp = { "<cmd>!python -m black %<cr>", "save the file with black (Python)" },
-                t = { telescope_builtin.find_files, "telescope (cd scope)" },
-                tc = { telescope_builtin.commands, "telescope (command)" },
-                tg = { telescope_builtin.git_files, "telescope (git scope)" },
-                tgs = { telescope_builtin.git_status, "telescope (git status)" },
-                tm = { telescope_builtin.marks, "telescope (marks)" }
             }
         },
         {
@@ -80,9 +68,92 @@ local which = function()
 
     wk.register(
         {
+            h = {
+                name = "harpoon",
+                h = {
+                    function()
+                        harpoon.ui:toggle_quick_menu(harpoon:list())
+                    end,
+                    "open harpoon quick menu",
+                },
+                a = {
+                    function()
+                        harpoon:list():append()
+                    end,
+                    "harpoon append",
+                },
+                c = {
+                    function ()
+                       harpoon:list().clear()
+                    end,
+                    "harpoon clear"
+                },
+                d = {
+                    function ()
+                        harpoon:list():remove()
+                    end,
+                    "harpoon delete",
+                },
+                j = {
+                    function ()
+                       harpoon:list():select(1)
+                    end,
+                    "harpoon select 1",
+                },
+                k = {
+                    function ()
+                       harpoon:list():select(2)
+                    end,
+                    "harpoon select 2",
+                },
+                l = {
+                    function ()
+                       harpoon:list():select(3)
+                    end,
+                    "harpoon select 3",
+                },
+            }
+        },
+        {
+            prefix = "<leader>"
+        }
+    )
+
+    wk.register(
+        {
+            t = {
+                name = "telescope",
+                t = { telescope_builtin.find_files, "telescope (cd scope)" },
+                tr = { telescope_builtin.treesitter, "telescope (treesitter)" },
+                c = { telescope_builtin.commands, "telescope (command)" },
+                s = { telescope_builtin.lsp_document_symbols, "telescope (lsp document symbols)" },
+                sw = { function ()
+                        local symbol = vim.fn.input("Enter symbol: ")
+                        telescope_builtin.lsp_workspace_symbols({ query = symbol })
+                    end,
+                    "telescope (workspace symbols)" },
+                swd = {
+                    telescope_builtin.lsp_dynamic_workspace_symbols,
+                    "telescope (dynamically list LSP for workspace symbols)"
+                },
+                g = { telescope_builtin.git_files, "telescope (git scope)" },
+                gs = { telescope_builtin.git_status, "telescope (git status)" },
+                m = { telescope_builtin.marks, "telescope (marks)" }
+            }
+        },
+        {
+            prefix = "<leader>"
+        }
+    )
+
+    wk.register(
+        {
             s = {
                 name = "leap"
             }
+        },
+        {
+            prefix = "<leader>"
         }
     )
 end

@@ -3,6 +3,8 @@ source $ZDOTDIR/.js.zsh
 source $ZDOTDIR/.nnn.zsh
 source $ZDOTDIR/.mount.zsh
 source $ZDOTDIR/.python.zsh
+source $ZDOTDIR/.go.zsh
+source $ZDOTDIR/.pa.zsh
 source /usr/share/nvm/init-nvm.sh
 
 gdiscor() {

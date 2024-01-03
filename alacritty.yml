@@ -56,7 +56,7 @@ font:
   normal:
     # family: CaskaydiaCove Nerd Font
     family: IosevkaTermNerdFont
-    style: Regular
+    style: Bold 
   bold:
     # family: CaskaydiaCove Nerd Font
     family: IosevkaTermNerdFont
@@ -64,6 +64,6 @@ font:
   italic:
     # family: CaskaydiaCove Nerd Font
     family: IosevkaTermNerdFont
-    style: Italic
+    style: Bold 
   size: 14
 
