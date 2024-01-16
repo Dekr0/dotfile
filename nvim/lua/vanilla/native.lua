@@ -24,4 +24,6 @@ vim.opt.incsearch = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 
+vim.opt.colorcolumn = "81"
+
 print("Native setting ")

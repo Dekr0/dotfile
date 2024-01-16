@@ -23,8 +23,8 @@ local complete = function()
             }),
         },
         mapping = {
-            ["<C-k>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-            ["<C-j>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+            ["<C-j>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+            ["<C-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
             ["<C-h>"] = cmp.mapping.scroll_docs(-4),
             ["<C-l>"] = cmp.mapping.scroll_docs(4),
             ["<C-q>"] = cmp.mapping.abort(),

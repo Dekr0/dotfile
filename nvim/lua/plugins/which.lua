@@ -86,13 +86,13 @@ local which = function()
                     function ()
                        harpoon:list().clear()
                     end,
-                    "harpoon clear"
+                    "harpoon clear (all items)"
                 },
                 d = {
                     function ()
                         harpoon:list():remove()
                     end,
-                    "harpoon delete",
+                    "harpoon remove (current item)",
                 },
                 j = {
                     function ()

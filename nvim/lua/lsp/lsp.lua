@@ -115,7 +115,7 @@ local lspconfig = function()
     }
 
     lspconfig.volar.setup {
-        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+        filetypes = {'vue'}
     }
 
     print("LSP Server  ")

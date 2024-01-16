@@ -54,16 +54,16 @@ shell:
 
 font:
   normal:
-    # family: CaskaydiaCove Nerd Font
-    family: IosevkaTermNerdFont
-    style: Bold 
+    # /usr/local/share/fonts/ttf/IosevkaNerdFont/
+    # /usr/local/share/fonts/otf/CodeNewRomanNerdFont/
+    family: CodeNewRomanNerdFont
+    # family: IosevkaNerdFont 
+    style: Regular
   bold:
-    # family: CaskaydiaCove Nerd Font
-    family: IosevkaTermNerdFont
-    style: Bold
+    family: CodeNewRomanNerdFont
+    style: Regular
   italic:
-    # family: CaskaydiaCove Nerd Font
-    family: IosevkaTermNerdFont
-    style: Bold 
+    family: CodeNewRomanNerdFont
+    style: Regular 
   size: 14
 
