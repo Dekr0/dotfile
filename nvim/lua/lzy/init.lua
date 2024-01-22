@@ -50,13 +50,6 @@ local plugins = {
         lazy = false
     },
 
-    --discord-rich-presence
-    {
-        dir = "/home/dekr0/codebase/rc.nvim/",
-        config = require("plugins.discord"),
-        lazy = false
-    },
-
     --folding
     {
         "kevinhwang91/nvim-ufo",
@@ -117,11 +110,6 @@ local plugins = {
         config = require("lsp.treesitter"),
         lazy = false
     },
-    --treesitter-playground
-    {
-        "nvim-treesitter/playground",
-        lazy = false
-    },
 
     {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
@@ -135,11 +123,6 @@ local plugins = {
         config = require('plugins.ll')
     },
 
-    {
-        "dekr0/sutairu.nvim",
-        dir = "/home/dekr0/codebase/stackmap.nvim",
-        lazy = false,
-    },
 
     --which
     {
@@ -159,6 +142,13 @@ local plugins = {
         lazy = false,
         priority = 1000,
         opts = {}
+    },
+
+    -- ransetsu
+    {
+        "dekr0/ransetsu.nvim",
+        dir = "/home/dekr0/codebase/nvim-plugins/ransetsu.nvim/",
+        lazy = "false"
     }
 
     --tokyonight
