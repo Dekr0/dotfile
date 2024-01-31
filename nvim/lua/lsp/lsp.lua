@@ -5,7 +5,7 @@ local lspconfig = function()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     lspconfig.astro.setup {
-
+        filetypes = { "astro" },
     }
 
     lspconfig.clangd.setup {
@@ -19,6 +19,9 @@ local lspconfig = function()
                 command = "EslintFixAll",
             })
         end,
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx",
+        "typescript", "typescriptreact", "typescript.tsx", "vue", "svelte",
+        "astro" },
     })
 
     lspconfig.cssls.setup {
@@ -26,6 +29,7 @@ local lspconfig = function()
     }
 
     lspconfig.gopls.setup {
+        filetypes ={ "go", "gomod", "gowork", "gotmpl" }, 
     }
 
     lspconfig.lua_ls.setup {
@@ -108,6 +112,8 @@ local lspconfig = function()
     }
 
     lspconfig.tsserver.setup {
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx",
+        "typescript", "typescriptreact", "typescript.tsx" },
     }
 
     lspconfig.tailwindcss.setup {

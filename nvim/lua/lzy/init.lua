@@ -51,12 +51,12 @@ local plugins = {
     },
 
     --folding
-    {
-        "kevinhwang91/nvim-ufo",
-        dependencies = "kevinhwang91/promise-async",
-        config = require("plugins.ufo"),
-        lazy = false
-    },
+    --{
+    --    "kevinhwang91/nvim-ufo",
+    --    dependencies = "kevinhwang91/promise-async",
+    --    config = require("plugins.ufo"),
+    --    lazy = false
+    --},
 
     --harpoon
     {
@@ -135,7 +135,7 @@ local plugins = {
         end,
     },
 
-    --rose pine
+    --rose pine (9d7474f)
     {
         'rose-pine/neovim',
         config = require('plugins.rose'),
