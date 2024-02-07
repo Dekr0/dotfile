@@ -1,0 +1,67 @@
+{
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#0f8493",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": "<#0f8493>\uf0e7</>  <b>{{ .Path }}</b>  ",
+          "type": "path"
+        },
+        {
+          "foreground": "#ffc425",
+          "properties": {
+            "branch_icon": "",
+            "fetch_stash_count": true,
+            "fetch_status": true
+          },
+          "style": "diamond",
+          "template": "<#ffc425>\u26A1</> <b>{{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}</b>  ",
+          "type": "git"
+        },
+        {
+          "foreground": "#4d8206",
+          "properties": {
+            "style": "dallas",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": "{{ .FormattedMs }}s  ",
+          "type": "executiontime"
+        },
+        {
+          "foreground": "#d11141",
+          "style": "diamond",
+          "template": "\uf071  {{ .Meaning }}",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#b89a17",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#d11141{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": " \ue234 ",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}

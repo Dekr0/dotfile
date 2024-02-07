@@ -1,0 +1,72 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x6e6a86"
+blue = "0x9ccfd8"
+cyan = "0xebbcba"
+green = "0x31748f"
+magenta = "0xc4a7e7"
+red = "0xeb6f92"
+white = "0xe0def4"
+yellow = "0xf6c177"
+
+[colors.cursor]
+cursor = "0x524f67"
+text = "0xe0def4"
+
+[colors.hints.end]
+background = "#1f1d2e"
+foreground = "#6e6a86"
+
+[colors.hints.start]
+background = "#1f1d2e"
+foreground = "#908caa"
+
+[colors.line_indicator]
+background = "None"
+foreground = "None"
+
+[colors.normal]
+black = "0x26233a"
+blue = "0x9ccfd8"
+cyan = "0xebbcba"
+green = "0x31748f"
+magenta = "0xc4a7e7"
+red = "0xeb6f92"
+white = "0xe0def4"
+yellow = "0xf6c177"
+
+[colors.primary]
+background = "0x0c0c0c"
+foreground = "0xcccccc"
+
+[colors.selection]
+background = "0x403d52"
+text = "0xe0def4"
+
+[colors.vi_mode_cursor]
+cursor = "0x524f67"
+text = "0xe0def4"
+
+[debug]
+persistent_logging = false
+render_timer = false
+
+[font]
+size = 14
+
+[font.bold]
+family = "CodeNewRomanNerdFont"
+style = "Regular"
+
+[font.italic]
+family = "CodeNewRomanNerdFont"
+style = "Regular"
+
+[font.normal]
+family = "CodeNewRomanNerdFont"
+style = "Regular"
+
+[shell]
+program = "/usr/bin/tmux"
