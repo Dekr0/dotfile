@@ -9,7 +9,7 @@ create-next-app-nodejs/
 dconf/
 discord/
 dlv/
-droidcam/
+droidcam
 electronic-wechat/
 fcitx/
 flameshot/
@@ -32,7 +32,7 @@ libreoffice/
 matplotlib/
 Meltytech/
 menus/
-mimeapps.list/
+mimeapps.list
 mpv/
 neofetch/
 nextjs-nodejs/
@@ -40,11 +40,11 @@ obsidian/
 obs-studio/
 okularpartrc/
 okularrc/
-pavucontrol.ini/
+pavucontrol.ini
 Postman/
 procps/
 pulse/
-QtProject.conf/
+QtProject.conf
 Slack/
 smplayer/
 spotify/
@@ -52,12 +52,13 @@ sqlitebrowser/
 systemd/
 Thunar/
 Unknown Organization/
-user-dirs.dirs/
-user-dirs.locale/
+user-dirs.dirs
+user-dirs.locale
 vlc/
 xfce4/
 xournalpp/
 yarn/
 yay/
-zoom.conf/
-zoomus.conf/
+zoom.conf
+zoomus.conf
+.nuxtrc
