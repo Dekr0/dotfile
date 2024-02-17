@@ -1,7 +1,0 @@
-configuration {
- modi: "drun,ssh,window";
-}
-
-//@theme "/home/dekr0/.config/rofi/themes/nord-oneline.rasi"
-//@theme "/home/dekr0/.config/rofi/themes/rounded-gray-dark.rasi"
-@theme "/home/dekr0/.config/rofi/themes/rounded-gray-dark.rasi"

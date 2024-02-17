@@ -4,6 +4,7 @@ local lspconfig = function()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+    /*
     lspconfig.astro.setup {
         filetypes = { "astro" },
     }
@@ -128,6 +129,7 @@ local lspconfig = function()
     lspconfig.volar.setup {
         filetypes = {'vue'}
     }
+    */
 
     print("LSP Server  ")
 end
