@@ -50,14 +50,6 @@ local plugins = {
         lazy = false
     },
 
-    --folding
-    --{
-    --    "kevinhwang91/nvim-ufo",
-    --    dependencies = "kevinhwang91/promise-async",
-    --    config = require("plugins.ufo"),
-    --    lazy = false
-    --},
-
     --harpoon
     {
         "ThePrimeagen/harpoon",
@@ -138,37 +130,11 @@ local plugins = {
     --rose pine (9d7474f)
     {
         'rose-pine/neovim',
-        config = require('plugins.rose'),
+        config = require('plugins.theme'),
         lazy = false,
         priority = 1000,
         opts = {}
     },
-
-    -- ransetsu
-    {
-        "dekr0/ransetsu.nvim",
-        dir = "/home/dekr0/codebase/nvim-plugins/ransetsu.nvim/",
-        lazy = "false"
-    }
-
-    --tokyonight
-    --{
-    --    "folke/tokyonight.nvim",
-    --    config = require('plugins.tokoyonight'),
-    --    lazy = false,
-    --    priority = 1000,
-    --    opts = {}
-    --}
-    --
-
-    --kanagawa
-    --{
-    --    "rebelot/kanagawa.nvim",
-    --    config = require('plugins.kanagawa'),
-    --    lazy = false,
-    --    priority = 1000,
-    --    opts = {}
-    --}
 }
 
 local options = {

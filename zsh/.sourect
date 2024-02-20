@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-tmux new -ds docker -c ~/work_codebase/dev/sourect/sourect-oms-odoo2/
-tmux new -ds sh -c ~/work_codebase/dev/sourect/sourect-oms-odoo2/
-tmux new -ds nvim -c ~/work_codebase/dev/sourect/
-tmux new -ds mover -c ~/work_codebase/dev/sourect/sourect-oms-odoo2/
-tmux new -ds nuxt -c ~/work_codebase/dev/sourect/sourect-oms-storefront4/
-
-tmux switch-client -t nvim

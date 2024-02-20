@@ -8,9 +8,7 @@ local lspconfig = function()
         filetypes = { "astro" },
     }
 
-    lspconfig.bufls.setup {
-
-    }
+    lspconfig.bufls.setup {}
 
     lspconfig.clangd.setup {
         filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
@@ -88,9 +86,7 @@ local lspconfig = function()
         analyze_open_documents_only = false,
     }
 
-
-    lspconfig.pyright.setup {
-    }
+    lspconfig.pyright.setup {}
 
     lspconfig.rust_analyzer.setup {
         on_attach=function(client)
@@ -121,9 +117,7 @@ local lspconfig = function()
         "typescript", "typescriptreact", "typescript.tsx" },
     }
 
-    lspconfig.tailwindcss.setup {
-
-    }
+    lspconfig.tailwindcss.setup {}
 
     lspconfig.volar.setup {
         filetypes = {'vue'}
