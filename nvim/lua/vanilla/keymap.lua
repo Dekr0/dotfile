@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 
 vnoremap("sy", '"+y')
 
+
 vim.keymap.set("i", "<c-k>", "<Up>")
 vim.keymap.set("i", "<c-l>", "<Right>")
 vim.keymap.set("i", "<c-j>", "<Down>")
@@ -20,5 +21,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
+vim.keymap.set("n", "gt", "gt<cmd>cd %:p:h<cr><cmd>pwd<cr>")
+vim.keymap.set("n", "Gt", "gt<cmd>cd %:p:h<cr><cmd>pwd<cr>")
 
 print("Keymapping ")
