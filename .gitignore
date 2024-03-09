@@ -6,6 +6,7 @@ cef_user_data/
 chromium/
 Code/
 create-next-app-nodejs/
+Cypress/
 dconf/
 discord/
 dlv/
@@ -29,6 +30,7 @@ kdenlive-layoutsrc
 kdenliverc
 ktouch2rc
 libreoffice/
+libvirt/
 matplotlib/
 Meltytech/
 menus/
@@ -59,6 +61,7 @@ xfce4/
 xournalpp/
 yarn/
 yay/
+virt-viewer/
 zoom.conf
 zoomus.conf
 .nuxtrc
