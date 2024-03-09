@@ -5,6 +5,7 @@ source $ZDOTDIR/.mount.zsh
 source $ZDOTDIR/.python.zsh
 source $ZDOTDIR/.go.zsh
 source $ZDOTDIR/.pa.zsh
+source $ZDOTDIR/.qemu.zsh
 source /usr/share/nvm/init-nvm.sh
 source $ZDOTDIR/.ssh.zsh
 
