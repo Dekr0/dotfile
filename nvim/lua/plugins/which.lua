@@ -18,8 +18,6 @@ local which_file = {
             "cd to the current directory shown in nvim file explorer"
         },
         e = { "<cmd>Ex<cr>", "go to nvim file explorer" },
-        n = { "<cmd>Neotree<cr>", "neotree" },
-        nc = { "<cmd>NeoTreeClose<cr>", "close neotree" },
         q = { "<cmd>q<cr>", "close the current file" },
         s = { "<cmd>w<cr>", "save the file" },
         f = {
@@ -110,7 +108,7 @@ local which_lsp = {
             a = "add workplace",
             l = "list workplace",
             r = "remove workplace"
-        }
+        },
     }
 }
 

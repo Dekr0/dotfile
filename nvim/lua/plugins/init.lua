@@ -13,4 +13,23 @@ return {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
+
+    -- undo tree
+    {
+        "mbbill/undotree",
+        url = "https://github.com/mbbill/undotree",
+        config = function ()
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+        end,
+        lazy = false
+    },
+
+    -- zen mode
+    {
+        "folke/zen-mode.nvim",
+        lazy = false,
+        opts = {
+            width = 0.9
+        }
+    }
 }

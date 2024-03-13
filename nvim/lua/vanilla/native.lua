@@ -20,6 +20,10 @@ vim.opt.shiftwidth = 4
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+-- Spellcheck => press z= for suggestion
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+
 -- Backup
 vim.opt.swapfile = false
 vim.opt.backup = false

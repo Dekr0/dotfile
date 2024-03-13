@@ -97,6 +97,8 @@ local lua_ls = {
 --    analyze_open_documents_only = false,
 --}
 
+local postgres_lsp = {}
+
 local pyright = {}
 
 --local rust_analyzer = {
@@ -155,6 +157,7 @@ local core = function()
     lspconfig.gopls.setup(gopls)
     lspconfig.lua_ls.setup(lua_ls)
     -- lspconfig.omnisharp.setup(omnisharp)
+    lspconfig.postgres_lsp.setup(postgres_lsp)
     lspconfig.pyright.setup(pyright)
     -- lspconfig.rust_analyzer.setup(rust_analyzer)
     lspconfig.tsserver.setup(tsserver)
