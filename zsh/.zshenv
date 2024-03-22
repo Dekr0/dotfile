@@ -18,8 +18,10 @@ export GOPATH="$HOME/go"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/bin/protoc/bin/
 PATH=$PATH:$DOTNET:$DOTNET_ROOT:$DOTNET_ROOT/tools
 PATH=$PATH:$BUN_INSTALL/bin
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$HOME/.cargo/bin
 . "$HOME/.cargo/env"

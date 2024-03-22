@@ -9,7 +9,7 @@ local astro = {
     filetypes = { "astro" }
 }
 
--- local bufls = {}
+local bufls = {}
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -150,7 +150,7 @@ local core = function()
     local lspconfig = require('lspconfig')
 
     lspconfig.astro.setup(astro)
-    -- lspconfig.bufls.setup(bufls)
+    lspconfig.bufls.setup(bufls)
     lspconfig.clangd.setup(clangd)
     lspconfig.cssls.setup(cssls)
     lspconfig.eslint.setup(eslint)
