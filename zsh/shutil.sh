@@ -23,6 +23,11 @@ pkg_install() {
     
     if [ $? -eq 0 ]; then
         shutil --pkg-add $pkg --pkg-category $category
+
+        cd $PKG_LIST_HOME
+        git add .
+        git commit -m "add package ${pkg} to ${category}"
+        git push origin Arch-PC
     fi
 }
 
@@ -39,5 +44,10 @@ pkg_uninstall() {
 
     if [ $? -eq 0 ]; then
         shutil --pkg-rm $pkg --pkg-category $category
+
+        cd $PKG_LIST_HOME
+        git add .
+        git commit -m "remove package ${pkg} to ${category}"
+        git push origin Arch-PC
     fi
 }
