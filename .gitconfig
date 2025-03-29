@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = main
+[user]
+	email = dekr0.dk@protonmail.com
+	name = Dekr0
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit

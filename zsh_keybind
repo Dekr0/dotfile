@@ -1,0 +1,4 @@
+# [default]
+alt+left backward_word
+alt+right forward_word
+alt+backspace delete_word

@@ -1,0 +1,5 @@
+configuration {
+ modi: "drun,ssh,window";
+}
+
+@theme "themes/squared-nord.rasi"
