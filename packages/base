@@ -5,6 +5,7 @@ clang
 curl
 fzf
 git
+htop
 iwd
 lazygit
 less
@@ -16,6 +17,7 @@ ninja
 nnn
 openssh
 openssl
+pyright
 python-pip
 ripgrep
 wget
