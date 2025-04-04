@@ -6,8 +6,17 @@ fd() {
 }
 
 fdb() {
-    cd $(shutil --walker --walker-depth 3 --walker-worker 0 $HOME/codebase/shutil $HOME/repo/dotfile $HOME/repo/suckless/dwm $XDG_CONFIG_HOME/nvim/lua)
+    cd $(shutil --walker --walker-depth 3 --walker-worker 0)
     zle reset-prompt
+}
+
+fdb_kitty() {
+    select=$(shutil --walker --walker-depth 3 --walker-worker 0)
+    kitten @ launch --type=tab --cwd $select
+}
+
+kitty_tab_fzf() {
+    shutil --kitty-fzf-tab
 }
 
 pkg_install() {
