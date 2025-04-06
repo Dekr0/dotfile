@@ -3,6 +3,7 @@ base-devel
 cmake
 clang
 curl
+dust
 fzf
 git
 htop
