@@ -21,6 +21,7 @@ openssl
 pyright
 python-pip
 ripgrep
+unzip
 wget
 wireless_tools
 wpa_supplicant
