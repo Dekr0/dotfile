@@ -2,6 +2,7 @@
 [ -f $z $ZDOTDIR/dotfile.sh ] && source $ZDOTDIR/dotfile.sh
 [ -f $z $ZDOTDIR/fzf.sh ] && source $ZDOTDIR/fzf.sh
 [ -f $z $ZDOTDIR/nnn.sh ] && source $ZDOTDIR/nnn.sh
+[ -f $z $ZDOTDIR/server.sh ] && source $ZDOTDIR/server.sh
 [ -f $z $ZDOTDIR/shutil.sh ] && source $ZDOTDIR/shutil.sh
 
 [ -f $z $ZDOTDIR/bind.sh ] && source $ZDOTDIR/bind.sh
@@ -42,3 +43,10 @@ zstyle ':completion:*' rehash true                              # automatically 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# fnm
+FNM_PATH="/home/dekr0/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/dekr0/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
