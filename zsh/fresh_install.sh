@@ -20,6 +20,14 @@ mkdir $codebase
 mkdir $repo
 mkdir $suckless
 
+# install yay
+cd $download
+git clone https://aur.archlinux.org/yay.git
+cd yay
+make -si
+cd ../
+rm -rf yay
+
 # install golang
 curl $download/go1.24.2.linux-amd64.tar.gz https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
 cd $download

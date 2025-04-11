@@ -1,11 +1,17 @@
-[ -f $z $ZDOTDIR/alias.sh ] && source $ZDOTDIR/alias.sh
-[ -f $z $ZDOTDIR/dotfile.sh ] && source $ZDOTDIR/dotfile.sh
-[ -f $z $ZDOTDIR/fzf.sh ] && source $ZDOTDIR/fzf.sh
-[ -f $z $ZDOTDIR/nnn.sh ] && source $ZDOTDIR/nnn.sh
-[ -f $z $ZDOTDIR/server.sh ] && source $ZDOTDIR/server.sh
-[ -f $z $ZDOTDIR/shutil.sh ] && source $ZDOTDIR/shutil.sh
+source_dotfile() {
+    local dotfile="${1:-}"
+    [ -f $ZDOTDIR/$dotfile ] && source $ZDOTDIR/$dotfile
+}
 
-[ -f $z $ZDOTDIR/bind.sh ] && source $ZDOTDIR/bind.sh
+source_dotfile util.sh
+source_dotfile alias.sh
+source_dotfile bind.sh
+source_dotfile curl.sh
+source_dotfile dotfile.sh
+source_dotfile fzf.sh
+source_dotfile git.sh
+source_dotfile nnn.sh
+source_dotfile shutil.sh
 
 # [prompt_style]
 PS1="%1d"$'\n'"> "

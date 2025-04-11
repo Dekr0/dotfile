@@ -10,6 +10,9 @@ export COLORTERM=truecolor
 export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/chromium
 
+# [docker]
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
 # [history_file]
 export HISTFILE=~/.histfile
 export HISTSIZE=1000

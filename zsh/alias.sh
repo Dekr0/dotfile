@@ -36,8 +36,3 @@ config_git_ssh() {
 
 # [xorg]
 alias list_window="wmctrl -lx"
-
-# [curl]
-curl-file() {
-    curl --output $1 $2
-}

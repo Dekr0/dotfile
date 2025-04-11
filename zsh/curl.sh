@@ -6,3 +6,7 @@ curl_post_simple() {
     # example {'foo':'bar', 'fizz': 'buzz'} => -d foo=bar -d fizz=buzz
     curl -X POST $url
 }
+
+curl_file() {
+    curl --output $1 $2
+}
