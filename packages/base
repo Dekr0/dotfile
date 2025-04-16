@@ -20,6 +20,7 @@ openssh
 openssl
 pyright
 python-pip
+python-uv
 ripgrep
 unzip
 wget
