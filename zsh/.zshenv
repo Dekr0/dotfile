@@ -16,6 +16,8 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 # [history_file]
 export HISTFILE=~/.histfile
 export HISTSIZE=1000
+export SAVEHIST=1000
+setopt appendhistory
 
 # [PATH] 
 
@@ -26,7 +28,9 @@ export PKG_LIST_HOME=$DOTFILE/packages
 # [PATH.local]
 export LOCAL=$HOME/.local
 export LOCAL_BIN=$LOCAL/bin
+export LSP=$LOCAL/bin/lsp
 PATH=$PATH:$LOCAL_BIN
+PATH=$PATH:$LSP
 
 # [PATH.go]
 export GOPATH=$HOME/go
@@ -39,3 +43,6 @@ PATH=$PATH:$HOME/.cargo/bin
 # [PATH.lsp_server]
 PATH=$PATH:$LOCAL/lsp/lua/bin
 PATH=$PATH:$LOCAL/lsp/clangd/bin
+
+# [PATH.development]
+export WWISE_TELLER_INITIAL_DIR=$HOME/codebase/wwise-teller/tests/bnk

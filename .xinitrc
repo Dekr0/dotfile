@@ -8,7 +8,7 @@ xset fp rehash
 
 $ZDOTDIR/bar.sh &
 
-xrandr --output DP-2 --primary --mode 1920x1080 --output HDMI-1 --mode 1920x1080 --left-of DP-2
+xrandr --output DP-2 --primary --mode 1920x1080 --rate 144.0 --output HDMI-1 --mode 1920x1080 --left-of DP-2
 
 hsetroot -solid black
 

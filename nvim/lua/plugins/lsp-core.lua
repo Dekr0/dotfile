@@ -19,6 +19,23 @@ local pyright = {}
 --     }
 -- }
 
+local ts_ls = {
+    filetypes = {
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx"
+    }
+}
+
+local zls = {
+    setting = {
+        zls = {
+            semantic_tokens = "partial"
+        }
+    }
+}
+
 -- [[ Section end ]]
 
 
@@ -52,14 +69,8 @@ return {
             lspconfig.gopls.setup(gopls)
             -- lspconfig.omnisharp.setup(omnisharp)
             lspconfig.pyright.setup(pyright)
-            lspconfig.ts_ls.setup({
-                filetypes = {
-                    "javascript",
-                    "typescript",
-                    "typescriptreact",
-                    "typescript.tsx"
-                }
-            })
+            lspconfig.ts_ls.setup(ts_ls)
+            lspconfig.zls.setup(zls)
 
             vim.diagnostic.config(diagnostic)
         end,
