@@ -22,7 +22,6 @@ pyright
 python-pip
 python-uv
 ripgrep
-tmux
 unzip
 wget
 wireless_tools
