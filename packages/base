@@ -18,6 +18,7 @@ ninja
 nnn
 openssh
 openssl
+pandoc-cli
 pyright
 python-pip
 python-uv
