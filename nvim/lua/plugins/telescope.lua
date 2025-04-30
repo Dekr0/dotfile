@@ -15,9 +15,12 @@ local setup = function()
 
     telescope.load_extension("live_grep_args")
 
-    vim.api.nvim_create_user_command("Symbol", "Telescope lsp_document_symbols", {})
-    vim.api.nvim_create_user_command("SearchHistory", "Telescope search_history", {})
-    vim.api.nvim_create_user_command("CmdHistory", "Telescope command_history", {})
+    vim.api.nvim_create_user_command("Tsymb", "Telescope lsp_document_symbols", {})
+    vim.api.nvim_create_user_command("Thist", "Telescope search_history", {})
+    vim.api.nvim_create_user_command("Tchist", "Telescope command_history", {})
+    vim.api.nvim_create_user_command("Tlgrep", "Telescope live_grep", {})
+    vim.api.nvim_create_user_command("Tbgrep", "Telescope current_buffer_fuzzy_find", {})
+    vim.api.nvim_create_user_command("Tbuffs", "Telescope buffers", {})
 end
 
 return {
