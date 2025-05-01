@@ -9,13 +9,17 @@ stage_dotfile() {
     echo
     yes | cp -r $XDG_CONFIG_HOME/zsh $DOTFILE
     echo
-    yes | cp $HOME/.xinitrc $DOTFILE
-    echo
-    yes | cp $HOME/.zshenv $DOTFILE
+    yes | cp $XDG_CONFIG_HOME/zsh_keybind $DOTFILE
     echo
     yes | cp $HOME/.gitconfig $DOTFILE
     echo
-    yes | cp $XDG_CONFIG_HOME/zsh_keybind $DOTFILE
+    yes | cp $HOME/.shutil.json $DOTFILE
+    echo
+    yes | cp $HOME/.wezterm.lua $DOTFILE
+    echo
+    yes | cp $HOME/.xinitrc $DOTFILE
+    echo
+    yes | cp $HOME/.zshenv $DOTFILE
     echo
     rm $DOTFILE/zsh/.zcompdump
     rm $DOTFILE/nvim/lazy-lock.json
@@ -36,6 +40,10 @@ deploy_dotfile() {
     yes | cp -r zsh $XDG_CONFIG_HOME
     echo
     yes | cp .gitconfig $HOME
+    echo
+    yes | cp .shutil.json $DOTFILE
+    echo
+    yes | cp .wezterm.lua $DOTFILE
     echo
     yes | cp .xinitrc $HOME
     echo

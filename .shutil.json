@@ -1,0 +1,71 @@
+{
+    "BookmarkRoots": [
+        "$HOME/codebase/wwise-teller",
+        "$HOME/codebase/shutil",
+        "$HOME/codebase/natPass",
+        "$HOME/repo/dotfile",
+        "$HOME/repo/suckless/dwm",
+        "$XDG_CONFIG_HOME/nvim/lua"
+    ],
+    "SessionProfiles": [
+        {
+            "name": "natPass",
+            "sessions": [
+                {
+                    "name": "docker",
+                    "path": "$HOME/codebase/natPass/rabbitMQ"
+                },
+                {
+                    "name": "http",
+                    "path": "$HOME/codebase/natPass/natPass-backend"
+                },
+                {
+                    "name": "result_consumer",
+                    "path": "$HOME/codebase/natPass/natPass-backend"
+                },
+                {
+                    "name": "task_consumer",
+                    "path": "$HOME/codebase/natPass/badge_printing"
+                },
+                {
+                    "name": "curl",
+                    "path": "$HOME/codebase/natPass/natPass-backend/internal/http_server"
+                }
+            ]
+        },
+        {
+            "name": "wwise-teller",
+            "sessions": [
+                {
+                    "name": "nvim",
+                    "path": "$HOME/codebase/wwise-teller"
+                },
+                {
+                    "name": "test",
+                    "path": "$HOME/codebase/wwise-teller"
+                },
+                {
+                    "name": "file_system",
+                    "path": "$HOME/codebase/wwise-teller"
+                }
+            ]
+        },
+        {
+            "name": "shutil",
+            "sessions": [
+                {
+                    "name": "nvim",
+                    "path": "$HOME/codebase/shutil"
+                },
+                {
+                    "name": "test",
+                    "path": "$HOME/codebase/shutil"
+                },
+                {
+                    "name": "file_system",
+                    "path": "$HOME/codebase/shutil"
+                }
+            ]
+        }
+    ]
+}
