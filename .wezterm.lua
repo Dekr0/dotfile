@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 config.font_size = 24.0
 
 local scheme = wezterm.get_builtin_color_schemes()['zenbones_dark']
-scheme.background = '#0f0b0a'
+scheme.background = '#1c1917'
 config.color_schemes = {
     ['zenbones_dark'] = scheme
 }

@@ -9,6 +9,8 @@ stage_dotfile() {
     echo
     yes | cp -r $XDG_CONFIG_HOME/zsh $DOTFILE
     echo
+    yes | cp -r $XDG_CONFIG_HOME/theme.txt $DOTFILE
+    echo
     yes | cp $XDG_CONFIG_HOME/zsh_keybind $DOTFILE
     echo
     yes | cp $HOME/.gitconfig $DOTFILE

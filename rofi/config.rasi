@@ -2,4 +2,4 @@ configuration {
  modi: "drun,ssh,window";
 }
 
-@theme "themes/squared-zenbones-dark.rasi"
+@theme "themes/squared-zenbones.rasi"

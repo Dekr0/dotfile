@@ -5,7 +5,7 @@ local zenbones = {
     priority = 1000,
     config = function()
         -- vim.g.zenbones_darken_comments = 45
-        vim.cmd.colorscheme('zenbones_darker')
+        vim.cmd.colorscheme('xzenbones')
     end
 }
 
