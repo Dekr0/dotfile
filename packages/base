@@ -13,6 +13,7 @@ less
 lf
 lldb
 llvm
+man
 neovim
 ninja
 nnn
@@ -27,6 +28,7 @@ unzip
 wget
 wireless_tools
 wpa_supplicant
+zig
 zip
 zsh
 yt-dlp
