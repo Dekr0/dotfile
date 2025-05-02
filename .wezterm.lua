@@ -11,8 +11,8 @@ config.color_schemes = {
 config.color_scheme = 'zenbones_dark'
 
 config.font = wezterm.font_with_fallback {
-    'IBM Plex Mono',
-    italic = true,
+    'Iosevka',
+    italic = false,
     enable_bold = false,
 }
 
@@ -21,7 +21,7 @@ config.font_rules = {
         intensity = 'Bold',
         italic = false,
         font = wezterm.font_with_fallback {
-            'IBM Plex Mono',
+            'Iosevka',
             italic = false,
             stretch = 'Normal',
             weight = 'Regular',
@@ -29,9 +29,9 @@ config.font_rules = {
     },
     {
         intensity = 'Bold',
-        italic = true,
+        italic = false,
         font = wezterm.font_with_fallback {
-            'IBM Plex Mono',
+            'Iosevka',
             italic = false,
             stretch = 'Normal',
             weight = 'Regular',

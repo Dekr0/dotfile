@@ -1,6 +1,6 @@
 stage_dotfile() {
     cd $DOTFILE
-    git co Arch-PC
+    git co Linux
     yes | cp -r $XDG_CONFIG_HOME/kitty $DOTFILE
     echo
     yes | cp -r $XDG_CONFIG_HOME/nvim $DOTFILE
