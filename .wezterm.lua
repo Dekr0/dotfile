@@ -61,6 +61,7 @@ config.keys = {
     { key = '9', mods = 'CTRL', action = wezterm.action.ActivateTab(8) },
     { key = 'k', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(1)  },
     { key = 'j', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
+    { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentTab { confirm = false } },
     {
         key = 'f',
         mods = 'CTRL|ALT',

@@ -12,5 +12,9 @@ xrandr --output DP-2 --primary --mode 1920x1080 --rate 144.0 --output HDMI-1 --m
 
 hsetroot -solid black
 
+while true; do
+    dwm > /dev/null 2&1
+done
+
 # Note that "exec dwm" should be place at the end of .xinitrc
 exec dwm
