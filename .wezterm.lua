@@ -1,6 +1,15 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+config.font_size = 24.0
+
+local scheme = wezterm.get_builtin_color_schemes()['zenbones_dark']
+scheme.background = '#0f0b0a'
+config.color_schemes = {
+    ['zenbones_dark'] = scheme
+}
+config.color_scheme = 'zenbones_dark'
+
 config.font = wezterm.font_with_fallback {
     'IBM Plex Mono',
     italic = true,
@@ -30,6 +39,15 @@ config.font_rules = {
     }
 }
 
+config.tab_bar_at_bottom = true
+config.show_new_tab_button_in_tab_bar = false
+config.use_fancy_tab_bar = false
+config.colors = {
+    tab_bar = {
+        background = 'rgba(0, 0, 0, 0)'
+    }
+}
+
 config.key_map_preference = 'Physical'
 config.keys = {
     { key = '1', mods = 'CTRL', action = wezterm.action.ActivateTab(0) },
@@ -41,18 +59,8 @@ config.keys = {
     { key = '7', mods = 'CTRL', action = wezterm.action.ActivateTab(6) },
     { key = '8', mods = 'CTRL', action = wezterm.action.ActivateTab(7) },
     { key = '9', mods = 'CTRL', action = wezterm.action.ActivateTab(8) },
-    { 
-        key = 't', 
-        mods = 'CTRL|ALT|SHIFT',
-        action = wezterm.action.PromptInputLine {
-            description = 'Enter new name for tab',
-            action = wezterm.action_callback(function(window, pane, line)
-                if line then
-                    window:active_tab():set_title(line)
-                end
-            end)
-        }
-    },
+    { key = 'k', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(1)  },
+    { key = 'j', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
     {
         key = 'f',
         mods = 'CTRL|ALT',
@@ -64,11 +72,40 @@ config.keys = {
         key = 'n',
         mods = 'CTRL|ALT',
         action = wezterm.action.SpawnCommandInNewTab {
-            args = { 'shutil', '--wt_new_tab' }
+            args = { 'shutil', '--wezterm_new_tab' }
         }
     },
-    { key = 'k', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(1)  },
-    { key = 'j', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
+    {
+        key = 's',
+        mods = 'CTRL|ALT',
+        action = wezterm.action.SpawnCommandInNewTab {
+            args = { 'shutil', '--wezterm_new_sessions' }
+        }
+    },
+    {
+        key = 'p',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ShowLauncher
+    },
+    {
+        key = 's',
+        mods = 'CTRL|ALT|SHIFT',
+        action = wezterm.action.SpawnCommandInNewTab {
+            args = { 'shutil', '--wezterm_create_session_profile' }
+        }
+    },
+    { 
+        key = 't', 
+        mods = 'CTRL|ALT|SHIFT',
+        action = wezterm.action.PromptInputLine {
+            description = 'Enter new name for tab',
+            action = wezterm.action_callback(function(window, pane, line)
+                if line then
+                    window:active_tab():set_title(line)
+                end
+            end)
+        }
+    }
 }
 
 config.launch_menu = {

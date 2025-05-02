@@ -1,8 +1,7 @@
 -- Cursor and Line
 vim.opt.guicursor = ""
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.wrap = false
-
 
 vim.opt.timeout = false
 
