@@ -3,41 +3,46 @@ local config = wezterm.config_builder()
 
 config.font_size = 24.0
 
-local scheme = wezterm.get_builtin_color_schemes()['zenbones_dark']
-scheme.background = '#1c1917'
-config.color_schemes = {
-    ['zenbones_dark'] = scheme
-}
-config.color_scheme = 'zenbones_dark'
+-- local scheme = wezterm.get_builtin_color_schemes()['zenbones_dark']
+-- scheme.background = '#1c1917'
+-- config.color_schemes = {
+--     ['zenbones_dark'] = scheme
+-- }
+-- config.color_scheme = 'zenbones_dark'
+config.color_scheme = 'Grayscale Dark (base16)'
 
-config.font = wezterm.font_with_fallback {
-    'Iosevka',
+config.font = wezterm.font {
+    -- family = 'IBM Plex Mono',
+    family = 'Iosevka',
     italic = false,
-    enable_bold = false,
+    weight = 'Regular',
+    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 }
 
-config.font_rules = {
-    {
-        intensity = 'Bold',
-        italic = false,
-        font = wezterm.font_with_fallback {
-            'Iosevka',
-            italic = false,
-            stretch = 'Normal',
-            weight = 'Regular',
-        }
-    },
-    {
-        intensity = 'Bold',
-        italic = false,
-        font = wezterm.font_with_fallback {
-            'Iosevka',
-            italic = false,
-            stretch = 'Normal',
-            weight = 'Regular',
-        }
-    }
-}
+-- config.font_rules = {
+--     {
+--         intensity = 'Bold',
+--         italic = false,
+--         font = wezterm.font_with_fallback {
+--             -- family = 'IBM Plex Mono',
+--             family = 'Iosevka',
+--             italic = false,
+--             stretch = 'Normal',
+--             weight = 'Light',
+--         }
+--     },
+--     {
+--         intensity = 'Bold',
+--         italic = false,
+--         font = wezterm.font_with_fallback {
+--             -- family = 'IBM Plex Mono',
+--             family = 'Iosevka',
+--             italic = false,
+--             stretch = 'Normal',
+--             weight = 'Light',
+--         }
+--     }
+-- }
 
 config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
