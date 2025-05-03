@@ -4,9 +4,21 @@ local zenbones = {
     lazy = false,
     priority = 1000,
     config = function()
-        -- vim.g.zenbones_darken_comments = 45
+        vim.g.zenbones_darken_comments = 45
         vim.cmd.colorscheme('xzenbones')
     end
 }
 
-return zenbones
+local mono = {
+    'slugbyte/lackluster.nvim',
+    -- 'pgdouyon/vim-yin-yang',
+    -- 'ewilazarus/preto',
+    -- dependencies = 'rktjmp/lush.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+        vim.cmd.colorscheme("lackluster")
+    end
+}
+
+return mono

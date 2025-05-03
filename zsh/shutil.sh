@@ -1,3 +1,7 @@
+cofi() {
+    $(shutil --cofi)
+}
+
 fd() {
     local depth="${1:-2}"
     local worker="${2:-0}"
