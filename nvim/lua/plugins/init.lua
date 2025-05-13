@@ -1,9 +1,8 @@
 return {
-    -- fugitive
-    -- {
-    --     "tpope/vim-fugitive",
-    --     lazy = false
-    -- },
+    {
+        "tpope/vim-fugitive",
+        lazy = false
+    },
 
     {
         "LunarVim/bigfile.nvim",

@@ -12,34 +12,21 @@ config.font_size = 24.0
 config.color_scheme = 'Grayscale Dark (base16)'
 
 config.font = wezterm.font {
-    -- family = 'IBM Plex Mono',
-    family = 'Iosevka',
+    -- family = 'Iosevka',
+    family = 'Berkeley Mono',
     italic = false,
     weight = 'Regular',
+    stretch = 'Expanded',
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 }
 
 -- config.font_rules = {
 --     {
 --         intensity = 'Bold',
---         italic = false,
---         font = wezterm.font_with_fallback {
---             -- family = 'IBM Plex Mono',
+--         font = wezterm.font {
 --             family = 'Iosevka',
---             italic = false,
---             stretch = 'Normal',
---             weight = 'Light',
---         }
---     },
---     {
---         intensity = 'Bold',
---         italic = false,
---         font = wezterm.font_with_fallback {
---             -- family = 'IBM Plex Mono',
---             family = 'Iosevka',
---             italic = false,
---             stretch = 'Normal',
---             weight = 'Light',
+--             weight = 'Regular',
+--             stretch = 'Expanded'
 --         }
 --     }
 -- }
@@ -67,13 +54,20 @@ config.keys = {
     { key = 'k', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(1)  },
     { key = 'j', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateTabRelative(-1) },
     { key = 'w', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentTab { confirm = false } },
+    { key = 'k', mods = 'CTRL|ALT', action = wezterm.action.SwitchWorkspaceRelative(1) },
+    { key = 'j', mods = 'CTRL|ALT', action = wezterm.action.SwitchWorkspaceRelative(-1) },
     {
         key = 'f',
         mods = 'CTRL|ALT',
-        action = wezterm.action.SpawnCommandInNewTab {
-            args = { 'shutil', '--wezterm_activate_tab' },
-        }
+        action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|TABS' } -- active window
     },
+    -- {
+    --     key = 'f',
+    --     mods = 'CTRL|ALT',
+    --     action = wezterm.action.SpawnCommandInNewTab {
+    --         args = { 'shutil', '--wezterm_activate_tab' },
+    --     }
+    -- },
     {
         key = 'n',
         mods = 'CTRL|ALT',
@@ -112,12 +106,6 @@ config.keys = {
             end)
         }
     }
-}
-
-config.launch_menu = {
-    {
-        args = { 'shutil', '--wezterm_activate_tab' },
-    },
 }
 
 config.max_fps = 144

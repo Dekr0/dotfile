@@ -16,6 +16,7 @@ local setup = function()
     telescope.load_extension("live_grep_args")
 
     vim.api.nvim_create_user_command("Tsymb", "Telescope lsp_document_symbols", {})
+    vim.api.nvim_create_user_command("Tlref", "Telescope lsp_references", {})
     vim.api.nvim_create_user_command("Thist", "Telescope search_history", {})
     vim.api.nvim_create_user_command("Tchist", "Telescope command_history", {})
     vim.api.nvim_create_user_command("Tlgrep", "Telescope live_grep", {})

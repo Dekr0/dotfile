@@ -66,27 +66,6 @@
                     "path": "$HOME/codebase/shutil"
                 }
             ]
-        },
-        {
-            "name": "T",
-            "sessions": [
-                {
-                    "name": "T1",
-                    "path": "/home/dekr0/codebase/shutil"
-                },
-                {
-                    "name": "T2",
-                    "path": "/home/dekr0"
-                },
-                {
-                    "name": "T3",
-                    "path": "/home/dekr0"
-                },
-                {
-                    "name": "T4",
-                    "path": "/home/dekr0"
-                }
-            ]
         }
     ]
 }
