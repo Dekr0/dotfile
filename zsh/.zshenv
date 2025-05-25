@@ -44,5 +44,8 @@ PATH=$PATH:$HOME/.cargo/bin
 PATH=$PATH:$LOCAL/lsp/lua/bin
 PATH=$PATH:$LOCAL/lsp/clangd/bin
 
+# [blender]
+PATH=$PATH:$LOCAL/bin/blender
+
 # [PATH.development]
 export WWISE_TELLER_INITIAL_DIR=$HOME/codebase/wwise-teller/tests/bnk
