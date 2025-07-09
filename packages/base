@@ -26,6 +26,7 @@ python-uv
 ripgrep
 unzip
 wget
+whois
 wireless_tools
 wpa_supplicant
 zig
