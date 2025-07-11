@@ -25,6 +25,7 @@ pyright
 python-pip
 python-uv
 ripgrep
+unrar
 unzip
 wget
 whois
