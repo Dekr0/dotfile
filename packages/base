@@ -4,6 +4,7 @@ cmake
 clang
 curl
 dust
+ffmpeg
 fzf
 git
 htop
@@ -27,11 +28,11 @@ python-uv
 ripgrep
 unrar
 unzip
+vgmstream-cli
 wget
 whois
 wireless_tools
 wpa_supplicant
-zig
 zip
 zsh
 yt-dlp
