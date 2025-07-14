@@ -28,7 +28,6 @@ export PKG_LIST_HOME=$DOTFILE/packages
 # [PATH.local]
 export LOCAL=$HOME/.local
 export LOCAL_BIN=$LOCAL/bin
-export LSP=$LOCAL/bin/lsp
 PATH=$PATH:$LOCAL_BIN
 PATH=$PATH:$LSP
 
@@ -41,8 +40,8 @@ PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/.cargo/bin
 
 # [PATH.lsp_server]
-PATH=$PATH:$LOCAL/lsp/lua/bin
-PATH=$PATH:$LOCAL/lsp/clangd/bin
+export LSP=$LOCAL/bin/lsp
+PATH=$PATH:$LSP/lua-language-server/bin
 
 # [blender]
 PATH=$PATH:$LOCAL/bin/blender

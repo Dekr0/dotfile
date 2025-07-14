@@ -1,7 +1,12 @@
 return {
     {
         "tpope/vim-fugitive",
-        lazy = false
+        lazy = false,
+        config = function (_, opts)
+            vim.api.nvim_create_user_command("Gst", "vertical Git", {})
+            vim.api.nvim_create_user_command("Gco", "vertical Git commit", {})
+            vim.api.nvim_create_user_command("HGco", "Git commit", {})
+        end
     },
 
     {

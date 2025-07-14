@@ -1,6 +1,6 @@
 local setup = function()
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
-    
+
     local cmp = require("cmp")
     local lspkind = require("lspkind")
 
@@ -73,7 +73,14 @@ local setup = function()
             { name = "buffer", keyword_length = 5 }, -- from current text buf
             -- { name = "luasnip" }, -- Lua Snippet
             -- { name = "nvim_lua" }, -- Neovim's Lua API
-            { name = "nvim_lsp" }, -- from nvim lsp
+            {
+                name = "nvim_lsp",
+                option = {
+                    markdown_oxide = {
+                        keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
+                    }
+                }
+            }, -- from nvim lsp
             { name = "path" }, -- from local machine path
         }),
 
