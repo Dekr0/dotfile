@@ -48,3 +48,5 @@ PATH=$PATH:$LOCAL/bin/blender
 
 # [PATH.development]
 export WWISE_TELLER_INITIAL_DIR=$HOME/codebase/wwise-teller/tests/bnk
+
+export HD2DATA=/mnt/d/Program Files/Steam/steamapps/common/Helldivers 2/data
