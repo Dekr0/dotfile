@@ -2,6 +2,7 @@ chromium
 code
 dmenu
 flameshot
+firefox
 ghostty
 hsetroot
 kitty
@@ -14,6 +15,7 @@ screenkey
 timeshift
 wezterm
 wmctrl
+zen-browser-bin
 xorg_xinit
 xorg_xrandr
 xsel
