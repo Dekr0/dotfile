@@ -33,6 +33,10 @@ config_git_ssh() {
     eval "$(ssh-agent -s)"
     ssh-add $HOME/.ssh/id_ed25519
 }
+config_git_gpg() {
+    gpg --full-generate-key
+    gpg --list-secret-keys --keyid-format=long
+}
 
 # [xorg]
 alias list_window="wmctrl -lx"
