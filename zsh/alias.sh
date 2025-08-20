@@ -37,6 +37,10 @@ config_git_gpg() {
     gpg --full-generate-key
     echo "gpg --list-secret-keys --keyid-format=long"
     echo "gpg --armor --export <ID> and copy the output"
+    echo "git config --global --unset gpg.format"
+    echo "git config --global user.signingkey <ID>"
+    echo "git config --global commit.gpgsign true"
+    echo "git config --global tag.gpgSign true"
 }
 
 # [xorg]
