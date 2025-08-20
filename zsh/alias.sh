@@ -35,7 +35,8 @@ config_git_ssh() {
 }
 config_git_gpg() {
     gpg --full-generate-key
-    gpg --list-secret-keys --keyid-format=long
+    echo "gpg --list-secret-keys --keyid-format=long"
+    echo "gpg --armor --export <ID> and copy the output"
 }
 
 # [xorg]
