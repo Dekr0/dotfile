@@ -31,6 +31,50 @@ config.font = wezterm.font {
 --     }
 -- }
 
+config.font = wezterm.font('CommitMono', { weight = 'Regular', italic = false })
+config.font_rules = {
+    {
+        -- For bold-but-not-italic text, use the setting provided by `font`
+        intensity = 'Bold',
+        italic = false,
+        font = wezterm.font_with_fallback{
+            family = 'CommitMono',
+            weight = 'Regular',
+            italic = false
+        }
+    },
+    {
+        -- For bold-and-italic text, use ...
+        intensity = 'Bold',
+        italic = true,
+        font = wezterm.font_with_fallback{
+            family = 'CommitMono',
+            weight = 'Regular',
+            italic = false
+        }
+    },
+    {
+        -- For normal-intensity-and-not-italic text, use ... 
+        intensity = 'Normal',
+        italic = false,
+        font = wezterm.font_with_fallback{
+            family = 'CommitMono',
+            weight = 'Regular',
+            italic = false
+        }
+    },
+    {
+        -- For normal-intensity--italic text, use ... 
+        intensity = 'Normal',
+        italic = true,
+        font = wezterm.font_with_fallback{
+            family = 'CommitMono',
+            weight = 'Regular',
+            italic = false
+        }
+    }
+}
+
 config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
