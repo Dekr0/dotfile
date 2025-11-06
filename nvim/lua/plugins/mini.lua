@@ -1,5 +1,5 @@
 return {
-    { 
+    {
         'echasnovski/mini.statusline',
         lazy = false,
         version = false,
@@ -9,16 +9,14 @@ return {
             })
         end
     },
-    { 
+    {
         'echasnovski/mini.misc',
         lazy = false,
         version = false,
         config = function()
-            misc = require("mini.misc")
-            misc.setup_termbg_sync()
         end
     },
-   -- {
+    -- {
     --     "echasnovski/mini-git", 
     --     lazy = false,
     --     main = 'mini.git',
