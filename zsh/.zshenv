@@ -25,28 +25,49 @@ setopt appendhistory
 export DOTFILE=$HOME/repo/dotfile
 export PKG_LIST_HOME=$DOTFILE/packages
 
+# [PATH.bun]
+export BUN_INSTALL=$HOME/.bun
+PATH=$PATH:$BUN_INSTALL/bin
+
 # [PATH.local]
 export LOCAL=$HOME/.local
 export LOCAL_BIN=$LOCAL/bin
-PATH=$PATH:$LOCAL_BIN
+export LOCAL_DOC=$LOCAL/doc
+export LOCAL_MAN=$LOCAL/man
+export LOCAL_XDG_DATA=$LOCAL/share
+PATH=$PATH:$LOCAL:$LOCAL_BIN:$LOCAL_DOC:$LOCAL_MAN:$LOCAL_XDG_DATA
+
+# [PATH.lib]
+export LOCAL_LIB=$LOCAL/lib
+export LOCAL_LUA_51_LIB=$LOCAL_LIB/lua/5.1
+PATH=$PATH:$LOCAL_LUA_51_LIB
+
+# [PATH.lsp_server]
+export LSP=$LOCAL_BIN/lsp
 PATH=$PATH:$LSP
 
 # [PATH.go]
-export GOPATH=$HOME/go
-PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:$GOPATH/bin
+export GOPATH=$LOCAL/gopath
+PATH=$PATH:$LOCAL/go/bin:$GOPATH:$GOPATH/bin
+
+# [PATH.lua_ls]
+PATH=$PATH:$LSP/lua_ls/bin
+
+# [PATH.nvim]
+export NVIM=$XDG_CONFIG_HOME/nvim/lua
 
 # [PATH.rust]
 PATH=$PATH:$HOME/.cargo/bin
 
-# [PATH.lsp_server]
-export LSP=$LOCAL/bin/lsp
-PATH=$PATH:$LSP/lua-language-server/bin
+# [PATH.odin]
+PATH=$PATH:$LOCAL_BIN/odin
+PATH=$PATH:$LSP/ols
 
-# [blender]
-PATH=$PATH:$LOCAL/bin/blender
+# [PATH.zig]
+PATH=$PATH:$LOCAL/zig
 
-# [PATH.development]
-export WWISE_TELLER_INITIAL_DIR=$HOME/codebase/wwise-teller/tests/bnk
-
-export HD2DATA=/mnt/d/Program Files/Steam/steamapps/common/Helldivers 2/data
+windows() {
+    export HD2DATA="/mnt/d/Program Files/Steam/steamapps/common/Helldivers 2/data"
+    export WINHOME="/mnt/c/Users/Dekr0"
+}
+. "$HOME/.cargo/env"
