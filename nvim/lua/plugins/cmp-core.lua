@@ -18,10 +18,10 @@ local setup = function()
             format = lspkind.cmp_format({
                 mode = "text",
                 menu = ({
-                    buffer   = "[Buffer]",
-                    luasnip  = "[LuaSnip]"
+                    buffer = "[Buffer]",
                     nvim_lsp = "[LSP]",
-                    nvim_lua = "[Lua]",
+                    nvim_lua = "[Nvim Lua API]",
+                    luasnip  = "[LuaSnip]"
                 })
             }),
         },
@@ -70,6 +70,10 @@ local setup = function()
 
         -- source of the autocomplete nvim-cmp will looking for
         sources = cmp.config.sources({
+            { -- from current text buf
+                name = "buffer",
+                keyword_length = 5
+            },
             { -- from nvim lsp
                 name = "nvim_lsp",
                 option = {
@@ -77,10 +81,6 @@ local setup = function()
                         keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
                     }
                 }
-            },
-            { -- from current text buf
-                name = "buffer",
-                keyword_length = 5
             },
             { -- Neovim's Lua API
                 name = "nvim_lua"
