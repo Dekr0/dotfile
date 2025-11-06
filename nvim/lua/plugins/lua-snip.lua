@@ -1,43 +1,24 @@
 local setup = function (opts)
     require("luasnip").config.set_config(opts)
 
-    -- vscode format
-    require("luasnip.loaders.from_vscode").lazy_load()
-    require("luasnip.loaders.from_vscode").lazy_load {
-        paths = vim.g.vscode_snippets_path or ""
-    }
+    local setup_keymap = require("plugins.luasnip.keymap")
+    local setup_go = require("plugins.luasnip.go")
+    local load_fmt = require("plugins.luasnip.load_fmt")
+    local setup_autocmd = require("plugins.luasnip.autocmd")
 
-    -- snipmate format
-    require("luasnip.loaders.from_snipmate").load()
-    require("luasnip.loaders.from_snipmate").lazy_load {
-        paths = vim.g.snipmate_snippets_path or ""
-    }
-
-    -- lua format
-    require("luasnip.loaders.from_lua").load()
-    require("luasnip.loaders.from_lua").lazy_load {
-        paths = vim.g.lua_snippets_path or ""
-    }
-
-    vim.api.nvim_create_autocmd("InsertLeave", {
-        callback = function()
-            local has_current_nodes = require("luasnip")
-                .session
-                .current_nodes[vim.api.nvim_get_current_buf()]
-            local jump_active = require("luasnip").session.jump_active
-            if has_current_nodes and not jump_active
-                then
-                    require("luasnip").unlink_current()
-                end
-            end,
-        })
+    setup_keymap()
+    setup_autocmd()
+    load_fmt()
+    setup_go()
 end
 
 return {
-    -- snippet (bridge to nvim-cmp using cmp_luanisp)
-    {
+    { -- snippet (bridge to nvim-cmp using cmp_luanisp)
         "L3MON4D3/LuaSnip",
-        opts = { history = true, updateevents = "TextChanged, TextChangedI" },
+        opts = {
+            history = true,
+            updateevents = "TextChanged, TextChangedI"
+        },
         config = function(_, opts)
             setup(opts)
         end,
