@@ -18,11 +18,10 @@ local setup = function()
             format = lspkind.cmp_format({
                 mode = "text",
                 menu = ({
-                    buffer = "[Buffer]",
+                    buffer   = "[Buffer]",
+                    luasnip  = "[LuaSnip]"
                     nvim_lsp = "[LSP]",
-                    -- luasnip = "[LuaSnip]",
-                    -- nvim_lua = "[Lua]",
-                    -- latex_symbols = "[Latex]",
+                    nvim_lua = "[Lua]",
                 })
             }),
         },
@@ -46,8 +45,9 @@ local setup = function()
                     behavior = cmp.ConfirmBehavior.Insert,
                     select = true,
                 },
-                -- mode that will activate this keybinding
-                { "i", "c" }
+                { -- mode that will activate this keybinding
+                    "i", "c",
+                }
             ),
 
             ["<c-space>"] = cmp.mapping {
@@ -70,18 +70,27 @@ local setup = function()
 
         -- source of the autocomplete nvim-cmp will looking for
         sources = cmp.config.sources({
-            { name = "buffer", keyword_length = 5 }, -- from current text buf
-            -- { name = "luasnip" }, -- Lua Snippet
-            -- { name = "nvim_lua" }, -- Neovim's Lua API
-            {
+            { -- from nvim lsp
                 name = "nvim_lsp",
                 option = {
                     markdown_oxide = {
                         keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
                     }
                 }
-            }, -- from nvim lsp
-            { name = "path" }, -- from local machine path
+            },
+            { -- from current text buf
+                name = "buffer",
+                keyword_length = 5
+            },
+            { -- Neovim's Lua API
+                name = "nvim_lua"
+            },
+            { -- from luasnip
+                name = "luasnip"
+            },
+            { -- from local machine path
+                name = "path"
+            },
         }),
 
         snippet = {
@@ -117,14 +126,11 @@ local setup = function()
 end
 
 return {
-    -- appearance only - symbols shown on the autocomplete 
-    {
+    { -- appearance only - symbols shown on the autocomplete
         "onsails/lspkind.nvim",
         lazy = false
     },
-
-    -- core of the autocomplete
-    {
+    { -- core of the autocomplete
         "hrsh7th/nvim-cmp",
         config = setup,
         lazy = false
