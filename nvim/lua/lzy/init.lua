@@ -17,6 +17,10 @@ local options = {
     },
     install = {
         missing = true
+    },
+    rocks = {
+        hererocks= false,
+        enabled = false
     }
 }
 
