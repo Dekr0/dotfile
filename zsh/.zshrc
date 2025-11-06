@@ -14,6 +14,7 @@ source_dotfile nnn.sh
 source_dotfile shutil.sh
 source_dotfile ssh.sh
 source_dotfile docker.sh
+source_dotfile $HOME/.cargo/env
 
 # [prompt_style]
 PS1="%1d"$'\n'"> "
@@ -58,3 +59,6 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/dekr0/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+# bun completions
+[ -s "/home/dekr0/.bun/_bun" ] && source "/home/dekr0/.bun/_bun"
