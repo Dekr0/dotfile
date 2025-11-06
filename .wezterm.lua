@@ -3,33 +3,7 @@ local config = wezterm.config_builder()
 
 config.font_size = 24.0
 
--- local scheme = wezterm.get_builtin_color_schemes()['zenbones_dark']
--- scheme.background = '#1c1917'
--- config.color_schemes = {
---     ['zenbones_dark'] = scheme
--- }
--- config.color_scheme = 'zenbones_dark'
 config.color_scheme = 'Grayscale Dark (base16)'
-
-config.font = wezterm.font {
-    -- family = 'Iosevka',
-    family = 'Berkeley Mono',
-    italic = false,
-    weight = 'Regular',
-    stretch = 'Expanded',
-    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
-}
-
--- config.font_rules = {
---     {
---         intensity = 'Bold',
---         font = wezterm.font {
---             family = 'Iosevka',
---             weight = 'Regular',
---             stretch = 'Expanded'
---         }
---     }
--- }
 
 config.font = wezterm.font('CommitMono', { weight = 'Regular', italic = false })
 config.font_rules = {
@@ -157,11 +131,12 @@ config.max_fps = 144
 config.enable_scroll_bar = false
 
 config.window_decorations = 'NONE'
+
 config.window_padding = {
-    top = 1,
-    left = 1,
-    right = 1,
-    bottom = 1,
+    top = 0,
+    left = 0,
+    right = 0,
+    bottom = 0,
 }
 
 return config
