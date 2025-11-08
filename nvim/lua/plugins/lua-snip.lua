@@ -3,6 +3,7 @@ local setup = function (opts)
 
     local setup_keymap = require("plugins.luasnip.keymap")
     local setup_go = require("plugins.luasnip.go")
+    local setup_zig = require("plugins.luasnip.zig")
     local load_fmt = require("plugins.luasnip.load_fmt")
     local setup_autocmd = require("plugins.luasnip.autocmd")
 
@@ -10,6 +11,7 @@ local setup = function (opts)
     setup_autocmd()
     load_fmt()
     setup_go()
+    setup_zig()
 end
 
 return {
