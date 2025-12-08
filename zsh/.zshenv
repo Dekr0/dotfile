@@ -6,6 +6,12 @@
 # [terminal_color]
 export COLORTERM=truecolor
 
+# [TODO]
+export TODO=~/repo/Dekr0
+
+# [Notes]
+export NOTE=~/repo/notes
+
 # [default applications]
 export EDITOR=/usr/bin/nvim
 export BROWSER=/usr/bin/chromium
@@ -64,7 +70,7 @@ PATH=$PATH:$LOCAL_BIN/odin
 PATH=$PATH:$LSP/ols
 
 # [PATH.zig]
-PATH=$PATH:$LOCAL/zig
+# PATH=$PATH:$LOCAL/zig
 
 windows() {
     export HD2DATA="/mnt/d/Program Files/Steam/steamapps/common/Helldivers 2/data"

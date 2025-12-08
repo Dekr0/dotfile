@@ -16,6 +16,33 @@ alias lsa="ls -la"
 # [basic.nvim]
 alias vi="nvim"
 
+# [gcc]
+gcc_strict() {
+    gcc -std=c99 -Wall -Werror \
+        -Wfloat-equal \
+        -Wundef \
+        -Wshadow \
+        -Wpointer-arith \
+        -Wcast-align \
+        -Wstrict-overflow=5 \
+        -Wwrite-strings \
+        -Wcast-qual \
+        -Wswitch-default \
+        -Wswitch-enum \
+        -Wconversion \
+        -Wunreachable-code \
+        "$@"
+}
+
+# [odin]
+odin_build_debug() {
+    odin build $1 -debug -out:$2
+}
+
+odin_build_test_debug() {
+    odin build $1 -build-mode:test -debug -out:$2
+}
+
 # [python]
 # [python.env]
 alias ipv="python3 -m venv venv && touch requirements.txt"
@@ -33,15 +60,12 @@ config_git_ssh() {
     eval "$(ssh-agent -s)"
     ssh-add $HOME/.ssh/id_ed25519
 }
-config_git_gpg() {
-    gpg --full-generate-key
-    echo "gpg --list-secret-keys --keyid-format=long"
-    echo "gpg --armor --export <ID> and copy the output"
-    echo "git config --global --unset gpg.format"
-    echo "git config --global user.signingkey <ID>"
-    echo "git config --global commit.gpgsign true"
-    echo "git config --global tag.gpgSign true"
-}
 
 # [xorg]
 alias list_window="wmctrl -lx"
+
+# [TODO listing]
+alias todo="nvim ${TODO}"
+
+# [Notes]
+alias note="nvim ${NOTE}"
