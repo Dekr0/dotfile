@@ -14,6 +14,31 @@ local setup_json = function()
     -- remember to put angle bracket
     local snippets = {
         s(
+            "zig_launch_no_build",
+            fmta(
+[[
+{
+    "version": "0.2.0",
+    "configurations": \[
+        {
+            "args": \[\],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "internalConsoleOptions": "neverOpen",
+            "name": "Launch",
+            "program": "zig-out/bin/<program>",
+            "request": "launch",
+            "type": "lldb"
+        }
+    \]
+}
+]],
+                {
+                    program = i(1, "program")
+                }
+            )
+        ),
+        s(
             "odin_launch",
             fmta(
 [[
@@ -76,6 +101,72 @@ local setup_json = function()
 }
 ]],
                 {}
+            )
+        ),
+        s(
+            "manifest",
+            fmta(
+[[
+{
+    "Version": "1",
+    "Guid": "<uuid>",
+    "Name": "<name>",
+    "Description": "<description>",
+    "Options": [
+        <option>
+    ]
+}
+<finish>
+]],
+                {
+                    uuid = i(1, "uuid"),
+                    name = i(2, "name"),
+                    description = i(3, "description"),
+                    option = i(4, "option"),
+                    finish = i(0),
+                }
+            )
+        ),
+        s(
+            "option",
+            fmta(
+[[
+{
+    "Name": "<name>",
+    "Description": "<description>",
+    "SubOptions": [
+        <suboption>
+    ]
+}
+<finish>
+]],
+                {
+                    name = i(1, "name"),
+                    description = i(2, "description"),
+                    suboption = i(3, "suboption"),
+                    finish = i(0),
+                }
+            )
+        ),
+        s(
+            "suboption",
+            fmta(
+[[
+{
+    "Name": "<name>",
+    "Description": "<description>",
+    "Include": [
+        <include>
+    ]
+}
+<finish>
+]],
+                {
+                    name = i(1, "name"),
+                    description = i(2, "description"),
+                    include = i(3, "include"),
+                    finish = i(0),
+                }
             )
         )
     }

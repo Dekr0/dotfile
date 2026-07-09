@@ -15,6 +15,7 @@ source_dotfile shutil.sh
 source_dotfile ssh.sh
 source_dotfile docker.sh
 source_dotfile $HOME/.cargo/env
+source_dotfile vulkan.sh
 
 # [prompt_style]
 PS1="%1d"$'\n'"> "

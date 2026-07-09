@@ -9,16 +9,16 @@ return {
         end
     },
 
-    {
-        "LunarVim/bigfile.nvim",
-        event = "BufReadPre",
-        opts = {
-            filesize = 2
-        },
-        config = function (_, opts)
-            require("bigfile").setup(opts)
-        end
-    },
+    -- {
+    --     "LunarVim/bigfile.nvim",
+    --     event = "BufReadPre",
+    --     opts = {
+    --         filesize = 2
+    --     },
+    --     config = function (_, opts)
+    --         require("bigfile").setup(opts)
+    --     end
+    -- },
 
     {
         "cohama/lexima.vim",
@@ -50,11 +50,23 @@ return {
             }
         }
     },
-    
+
     -- {
     --    "m4xshen/hardtime.nvim",
     --    lazy = false,
     --    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     --    opts = {}
     -- }
+
+    {
+        "nosduco/remote-sshfs.nvim",
+        opts = {},
+        lazy = false,
+        config = function()
+            require("telescope").load_extension("remote-sshfs")
+            require("remote-sshfs").setup({
+                ssh_known_hosts = vim.fn.expand("$HOME" .. "/.ssh/known_hosts")
+            })
+        end
+    }
 }

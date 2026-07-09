@@ -29,6 +29,31 @@ local setup_all = function()
 
                 }
             )
+        ),
+        s(
+            "is_pow_of_two",
+            fmta(
+[[
+(<x> & (<x_same> - 1)) == 0
+<finish>
+]],
+                {
+                    x      = i(1, "x"),
+                    x_same = rep(1),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "fast_mod",
+            fmta(
+                [[<dividend> & (<divisor> - 1)<finish>]],
+                {
+                    dividend = i(1, "dividend"),
+                    divisor  = i(2, "divisor"),
+                    finish   = i(0)
+                }
+            )
         )
     }
 

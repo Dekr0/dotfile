@@ -117,14 +117,24 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
     
     
     -- [[ Terminal (Primarily used in Windows)]]
+
     vim.keymap.set("n", "<leader>mn", function() vim.cmd("tab terminal") end,
     { desc = "open terminal in a new tab" })
     vim.keymap.set("n", "<leader>mm", function() vim.cmd("terminal") end,
     { desc = "open terminal in the current buff" })
     vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "exit terminal mode"})
-    
+
     -- [[ Section end ]]
     
+    -- [[ Folding view ]]
+    
+    vim.keymap.set("n", "<leader>mv", function() vim.cmd("mkview") end,
+    { desc = "save view" })
+    
+    vim.keymap.set("n", "<leader>lv", function() vim.cmd("loadview") end,
+    { desc = "load view" })
+
+    -- [[ Section End ]]
 
 -- [[ Section end ]]
 
@@ -269,6 +279,9 @@ local telescope_builtin = require("telescope.builtin")
     -- Search for command
     vim.keymap.set("n", "<leader>tc", telescope_builtin.commands,
     { desc = "command" })
+
+    vim.keymap.set("n", "<leader>tl", telescope_builtin.live_grep,
+    { desc = "live grep" })
 
     -- Search for LSP symbols at the active buffer
     vim.keymap.set("n", "<leader>ts", telescope_builtin.lsp_document_symbols,

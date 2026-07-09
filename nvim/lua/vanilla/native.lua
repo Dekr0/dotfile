@@ -31,3 +31,8 @@ vim.opt.spell = true
 vim.opt.shell = "/usr/bin/zsh"
 
 vim.opt.colorcolumn = "81"
+
+-- vim.api.nvim_create_autocmd('BufWinLeave', { command = 'mkview' })
+-- vim.api.nvim_create_autocmd('BufLeave', { command = 'mkview' })
+-- vim.api.nvim_create_autocmd('BufWinEnter', { command = 'loadview' })
+-- vim.api.nvim_create_autocmd('BufEnter', { command = 'loadview' })

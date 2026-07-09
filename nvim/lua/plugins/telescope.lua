@@ -27,10 +27,10 @@ end
 return {
     -- telescope (detail setup is in which.lua)
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
+        'nvim-telescope/telescope.nvim', version = '*',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-live-grep-args.nvim'
+            { 'nvim-telescope/telescope-live-grep-args.nvim', build = 'make' }
         },
         config = setup,
         lazy = true

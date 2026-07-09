@@ -34,6 +34,10 @@ gcc_strict() {
         "$@"
 }
 
+run_c() {
+    gcc_strict "$@" && ./a.out && rm ./a.out
+}
+
 # [odin]
 odin_build_debug() {
     odin build $1 -debug -out:$2
@@ -54,6 +58,13 @@ alias drpv="source ./.venv/bin/activate"
 alias pipr="pip install -r requirement.txt"
 alias pipf="pip freeze > requirement.txt"
 
+# [zig]
+zig_build_test() {
+    zig test $1
+        -femit-bin="$2"
+        --test-no-exec
+}
+
 # [ssh]
 config_git_ssh() {
     ssh-keygen -t ed25519 -C $1
@@ -69,3 +80,5 @@ alias todo="nvim ${TODO}"
 
 # [Notes]
 alias note="nvim ${NOTE}"
+
+alias meson="$LOCAL_BIN/meson/meson.py"

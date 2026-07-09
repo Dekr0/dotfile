@@ -47,6 +47,8 @@ return {
             })
     end,
     settings = {
-        Lua = {}
+        Lua = {
+            diagnostics = { globals = {"stingray"} }
+        }
     }
 }

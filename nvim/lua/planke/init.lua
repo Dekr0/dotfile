@@ -130,6 +130,10 @@ local function setup_user_commands(opts)
         vim.notify("opening floating window...")
         open_planke_float("Workflow improvement", opts.workflow_improve, nil)
     end, {})
+    vim.api.nvim_create_user_command("Pch", function()
+        vim.notify("opening floating window...")
+        open_planke_float("Chore list", opts.chore, nil)
+    end, {})
 end
 
 ---@param opts opts | nil

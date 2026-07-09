@@ -118,7 +118,7 @@ const target = b.standardTargetOptions(.{});
             "build_optimize_opt",
             fmta(
 [[
-const target = b.standardOptimizeOption(.{});
+const optimize = b.standardOptimizeOption(.{});
 ]],
                 {}
             )
@@ -215,6 +215,206 @@ test "<test_name>"
                 {
                     test_name = i(1, "test_name"),
                     test_name_same = rep(1),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "log",
+            fmta(
+[[
+const msg = "<msg>";
+log.<level>(msg, .{<args>});
+<finish>
+]],
+                {
+                    msg = i(1, "..."),
+                    level = i(2, "info"),
+                    args = i(3, "s"),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "debug",
+            fmta(
+[[
+std.debug.print("<msg>", .{<args>});
+<finish>
+]],
+                {
+                    msg = i(1, ""),
+                    args = i(2, ""),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "with_defer",
+            fmta(
+[[
+<expr>;
+defer <defer_expr>;
+<finish>
+]],
+                {
+                    expr = i(1, "resource acquisition expression"),
+                    defer_expr = i(2, "resource release expression"),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "diag_start",
+            fmta(
+[[
+<diag_var>.<bytes_start_field> = <bytes_start_expr>;
+errdefer <diag_var_same>.<bytes_end_field> = <bytes_end_expr>;
+<finish>
+]],
+                {
+                    diag_var = i(1, "diag"),
+                    bytes_start_field = i(2, "bytes_start"),
+                    bytes_start_expr = i(3, "r.nread"),
+                    diag_var_same = rep(1),
+                    bytes_end_field = i(4, "bytes_read"),
+                    bytes_end_expr = i(5, "r.nread"),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "diag_catch",
+            fmta(
+[[
+catch |e|
+{
+    <diag_var>.<err_field> = .{ .<union> = <expr> };
+    return e;
+}<finish>
+]],
+                {
+                    diag_var = i(1, "diag"),
+                    err_field = i(2, "err"),
+                    union = i(3, "union"),
+                    expr = i(4, "e"),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "diag_tmpl",
+            fmta(
+[[
+pub const Decode_Diagnostic = struct
+{
+    bytes_read : usize = 0,
+    bytes_start: usize = 0,
+    err        : union (enum)
+    {
+        start: void
+    } = .start,
+
+    pub fn to_log(d: *const Decode_Diagnostic) void
+    {
+        log.err("decode ... diagnostic", .{});
+        log.err("starts at {d} bytes", .{ d.bytes_start });
+        log.err("ends at {d} bytes", .{ d.bytes_read });
+        switch (d.err)
+        {
+            .start = unreachable
+        }
+    }
+};
+]],
+            {}
+            )
+        ),
+        s(
+            "diag_case_log",
+            fmta(
+[[
+.<case> =<arrow> |e|
+{
+    const args = .{<args>};
+    log.err("<msg>", args);
+},<finish>
+]],         
+                {
+                    case = i(1, "case"),
+                    arrow = i(2, ">"),
+                    msg = i(3, "..."),
+                    args = i(4, "..."),
+                    finish = i(0)
+                }
+            )
+        ),
+        s(
+            "module_alias",
+            fmta(
+[[
+const <member_name_same> = <module_name>.<member_name>;
+]],
+                {
+                    module_name = i(1, "mod"),
+                    member_name = i(2, "member_name"),
+                    member_name_same = rep(2)
+                }
+            )
+        ),
+        s(
+            "import_bin",
+            fmta("const binary = @import(\"binary\");", {})
+        ),
+        s(
+            "alias_le_reader",
+            fmta("const Reader = binary.LE_Reader;", {})
+        ),
+        s(
+            "alias_le_writer",
+            fmta("const Writer = binary.LE_Writer;", {})
+        ),
+        s(
+            "alias_varint",
+            fmta("const varint = binary.varint;", {})
+        ),
+        s(
+            "import_util",
+            fmta("const util = @import(\"util\");", {})
+        ),
+        s(
+            "alias_assert",
+            fmta("const assert = util.assert;", {})
+        ),
+        s(
+            "alias_reader_error",
+            fmta(
+                "const <err_rept> = Reader.<err>;<finish>", 
+                { err = i(1, "err"), err_rept = rep(1), finish = i(0) }
+            )
+        ),
+        s(
+            "alias_writer_error",
+            fmta(
+                "const <err_rept> = Writer.<err>;<finish>", 
+                { err = i(1, "err"), err_rept = rep(1), finish = i(0) }
+            )
+        ),
+        s(
+            "std_alias",
+            fmta(
+                "const <var> = std.<name>;<finish>",
+                { name = i(1, "name"), var = rep(1), finish = i(0) }
+            )
+        ),
+        s(
+            "mod_alias",
+            fmta(
+                "const <var> = <mod>.<name>;<finish>",
+                {
+                    mod = i(1, "mod"),
+                    name = i(2, "name"),
+                    var = rep(2),
                     finish = i(0)
                 }
             )
